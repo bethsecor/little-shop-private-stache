@@ -1,24 +1,6 @@
 <div class="container">
   <h3 class="center"> <%= @category.title %> Mustaches: </h3><br>
   <div class="row">
-    <% @category.staches.each do |stache| %>
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-image">
-              <img src= <%= stache.image_url %> >
-              <span class="card-title black-text"><%= stache.name %></span>
-            </div>
-            <span class="card-title">
-              <%= link_to stache.name, stache_path(stache) %>
-            </span>
-            <p>Info about this stache.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">View This Stache</a>
-          </div>
-        </div>
-      </div>
-  <% end %>
+    <%= render @staches %>
   </div>
 </div>
