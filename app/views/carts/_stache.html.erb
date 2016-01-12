@@ -4,5 +4,8 @@
   <p><%= stache.description %>
   </p>
   <p class="secondary-content right-align">item price: $<%= stache.rounded_price %><br>
-  quantity: <%= @cart.contents[stache.id.to_s]%></p>
+  quantity: <%= @cart.contents[stache.id.to_s]%>
+  <%= link_to "Remove From Cart", cart_stache_path(stache.id), method: :delete %>
+</p>
+
 </li>

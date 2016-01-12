@@ -10,6 +10,10 @@ class Cart
     contents[stache_id.to_s] += 1
   end
 
+  def delete_stache(stache_id)
+    contents.delete(stache_id.to_s)
+  end
+
   def staches
     Stache.find(contents.keys)
   end
