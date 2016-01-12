@@ -18,6 +18,6 @@ class VisitorCanViewByCategory < ActionDispatch::IntegrationTest
 
     assert_equal category_path(category_1), current_path
     assert page.has_content?("#{stache_1.name}")
-    save_and_open_page
+    refute page.has_content?("#{stache_2.name}")
   end
 end
