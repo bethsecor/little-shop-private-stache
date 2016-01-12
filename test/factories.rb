@@ -1,5 +1,10 @@
 # This will guess the User class
-FactoryGirl.define do
+FactoryGirl.define do  factory :stach, :class => 'Stache' do
+    name "MyString"
+description "MyText"
+price 1.5
+  end
+
   factory :stache do
     name
     description
