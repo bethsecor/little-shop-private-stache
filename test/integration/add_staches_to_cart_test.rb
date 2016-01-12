@@ -8,7 +8,7 @@ class AddStachesToCartTest < ActionDispatch::IntegrationTest
     click_on "Add to Cart"
     click_on "Add to Cart"
     click_on "View Cart"
-    
+
     assert_equal current_path, cart_path
     assert page.has_selector?("img[src$='#{stache.image_url}']")
     assert page.has_content?(stache.name)
