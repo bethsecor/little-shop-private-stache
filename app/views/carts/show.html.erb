@@ -1,0 +1,14 @@
+<h1>Cart</h1>
+
+
+<% @cart.staches.each do |stache| %>
+  <div>
+    <%= stache.name %>: <%= stache.price %> quantity: <%= @cart.contents[stache.id.to_s]%>
+    <%= stache.description %>
+    <%= image_tag stache.image_url %>
+  </div>
+<% end %>
+
+<div>
+  Total Price: <%= @cart.total_cost %>
+</div>

@@ -8,6 +8,9 @@
           <span class="card-title"><%= stache.name %></span>
           <p><%= stache.description %></p>
         </div>
+        <div class="card-action">
+          <%= link_to "Add to Cart", cart_staches_path(stache_id: stache.id), method: :post %>
+        </div>
       </div>
     <% end %>
   </div>
