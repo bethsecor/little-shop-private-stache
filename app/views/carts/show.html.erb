@@ -1,14 +1,20 @@
-<h1>Cart</h1>
+<h1 class="center">Cart</h1>
 
-
-<% @cart.staches.each do |stache| %>
-  <div>
-    <%= stache.name %>: <%= stache.price %> quantity: <%= @cart.contents[stache.id.to_s]%>
-    <%= stache.description %>
-    <%= image_tag stache.image_url %>
-  </div>
-<% end %>
-
-<div>
-  Total Price: <%= @cart.total_cost %>
-</div>
+<ul class="collection">
+  <% @cart.staches.each do |stache| %>
+    <li class="collection-item avatar light-green lighten-5 brown-text">
+      <img src= <%= stache.image_url %> alt="" class="circle">
+      <span class="title"><%= stache.name %></span>
+      <p><%= stache.description %>
+      </p>
+      <p class="secondary-content right-align">item price: $<%= stache.rounded_price %><br>
+      quantity: <%= @cart.contents[stache.id.to_s]%></p>
+    </li>
+  <% end %>
+  <li class="collection-item light-green lighten-4 right-align brown-text">
+    Total Staches: <%= @cart.total_quantity %>
+  </li>
+  <li class="collection-item light-green lighten-4 right-align brown-text">
+    Total Price: $<%= @cart.total_cost %>
+  </li>
+</ul>

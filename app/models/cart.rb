@@ -14,11 +14,15 @@ class Cart
     Stache.find(contents.keys)
   end
 
+  def stache_cost(stache_id)
+    Stache.find(stache_id).price * contents[stache_id.to_s]
+  end
+
   def total_quantity
     contents.values.sum
   end
 
   def total_cost
-    contents.reduce()
+    "%.2f" % contents.map {|stache_id, quantity| Stache.find(stache_id).price * quantity}.sum
   end
 end

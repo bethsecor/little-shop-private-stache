@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
     session.delete(:forwarding_url)
   end
 
-
   def set_cart
     @cart = Cart.new(session[:cart])
   end
