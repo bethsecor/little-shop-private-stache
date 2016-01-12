@@ -1,0 +1,2 @@
+module StachesHelper
+end
