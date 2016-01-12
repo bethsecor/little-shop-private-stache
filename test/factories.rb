@@ -23,7 +23,6 @@ FactoryGirl.define do
   sequence :title, %w(A B C D).cycle do |n|
     "#{n} category"
   end
-
 end
 
 # factory :category do
