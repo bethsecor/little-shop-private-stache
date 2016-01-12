@@ -6,20 +6,17 @@ body {
 }
 
 footer {
-   position:absolute;
+   position:relative;
    bottom: 0;
    width: 100%;
-   background-color: saddlebrown;
+}
+footer.page-footer {
+  background-color: saddlebrown;
 }
 
 nav {
   background-color: saddlebrown;
   color: black;
-}
-
-.card {
-  width: 25%;
-  display: inline-block;
 }
 
 .collection {
