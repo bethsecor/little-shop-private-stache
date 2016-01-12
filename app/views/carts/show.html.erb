@@ -1,0 +1,11 @@
+<h1 class="center">Cart</h1>
+
+<ul class="collection">
+  <%= render partial: "stache", collection: @staches %>
+  <li class="collection-item light-green lighten-4 right-align brown-text">
+    Total Staches: <%= @cart.total_quantity %>
+  </li>
+  <li class="collection-item light-green lighten-4 right-align brown-text">
+    Total Price: $<%= @cart.total_cost %>
+  </li>
+</ul>

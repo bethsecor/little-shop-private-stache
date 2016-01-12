@@ -1,14 +1,26 @@
 body {
   background-color: tan;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
-footer {
-   position:absolute;
-   bottom:0;
 
+footer {
+   position:relative;
+   bottom: 0;
    width: 100%;
-   background-color: saddlebrown;
 }
+footer.page-footer {
+  background-color: saddlebrown;
+}
+
 nav {
   background-color: saddlebrown;
   color: black;
+}
+
+.collection {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }

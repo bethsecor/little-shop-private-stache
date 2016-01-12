@@ -1,0 +1,15 @@
+<div class="col s12 m6">
+  <div class="card">
+    <div class="card-content">
+      <div class="card-image">
+        <img src= <%= stache.image_url %> >
+        <span class="card-title black-text"><%= stache.name %></span>
+      </div>
+        <p><%= stache.description %></p>
+        <p>Price: $<%= stache.price %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to "Add to Cart", cart_staches_path(stache_id: stache.id), method: :post %>
+      </div>
+    </div>
+  </div>

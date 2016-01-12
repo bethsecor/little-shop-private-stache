@@ -1,0 +1,2 @@
+module CartstachesHelper
+end

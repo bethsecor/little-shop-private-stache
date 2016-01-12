@@ -1,0 +1,14 @@
+<a href="<%= category_path(category) %>">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <img src= <%= category.staches.first.image_url %> >
+        </div>
+        <div class="card-content">
+          <%= category.title %>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

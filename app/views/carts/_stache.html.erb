@@ -1,0 +1,8 @@
+<li class="collection-item avatar light-green lighten-5 brown-text">
+  <img src= <%= stache.image_url %> alt="" class="circle">
+  <span class="title"><%= stache.name %></span>
+  <p><%= stache.description %>
+  </p>
+  <p class="secondary-content right-align">item price: $<%= stache.rounded_price %><br>
+  quantity: <%= @cart.contents[stache.id.to_s]%></p>
+</li>
