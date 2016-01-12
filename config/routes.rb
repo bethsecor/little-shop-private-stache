@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root to: 'application#dashboard'
+  resources :staches, only: [:index]
 end
