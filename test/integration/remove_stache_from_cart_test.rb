@@ -11,7 +11,11 @@ class RemoveStacheFromCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?(stache.name)
 
     click_on "Remove From Cart"
-
-    refute page.has_content?(stache.name)
+    within(".cart") do
+      refute page.has_content?(stache.name)
+    end
+    assert page.has_link?(stache.name)
+    successfully_removed = "Successfully removed #{stache.name} from your cart."
+    assert page.has_content?(successfully_removed)
   end
 end
