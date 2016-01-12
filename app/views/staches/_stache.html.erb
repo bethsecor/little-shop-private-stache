@@ -3,7 +3,7 @@
     <div class="card-content">
       <div class="card-image">
         <img src= <%= stache.image_url %> >
-        <span class="card-title black-text"><%= stache.name %></span>
+        <span class="card-title black-text"><%= link_to stache.name, stache_path(stache) %></span>
       </div>
         <p><%= stache.description %></p>
         <p>Price: $<%= stache.price %></p>
