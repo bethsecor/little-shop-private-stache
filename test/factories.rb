@@ -1,20 +1,15 @@
 # This will guess the User class
-FactoryGirl.define do  factory :stach, :class => 'Stache' do
-    name "MyString"
-description "MyText"
-price 1.5
-  end
-
+FactoryGirl.define do
   factory :stache do
     name
     description
     price
   end
 
-  sequence :name, ["A", "B", "C", "D", "E"].cycle do |n|
+  sequence :name, %w(A B C D E).cycle do |n|
     "#{n} mustache"
   end
-  sequence :description, ["A", "B", "C", "D", "E"].cycle do |n|
+  sequence :description, %w(A B C D E).cycle do |n|
     "#{n} description"
   end
   sequence :price, (15..20).to_a.cycle do |n|
