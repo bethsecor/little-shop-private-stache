@@ -18,7 +18,19 @@ nav {
   background-color: saddlebrown;
   color: black;
 }
+.logo-box {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+#logo {
+  max-width: 280px;
+}
+.navcart {
 
+}
 .collection {
   width: 80%;
   margin-left: auto;
