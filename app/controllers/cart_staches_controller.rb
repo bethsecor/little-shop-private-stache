@@ -15,4 +15,17 @@ class CartStachesController < ApplicationController
     "Successfully removed #{stache_link} from your cart.".html_safe
     redirect_to cart_path
   end
+
+  def update_quantity
+    stache_id = update_params[:stache_id]
+    quantity = update_params[:quantity]
+    session[:cart][stache_id] = quantity.to_f
+    redirect_to cart_path
+  end
+
+  private
+
+    def update_params
+      params.require(:stache_in_cart).permit(:quantity, :stache_id)
+    end
 end
