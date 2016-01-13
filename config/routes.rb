@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/dashboard", to: "users#show"
-  post 'update_quantity', to: 'cart_staches#update_quantity'
+  post "update_quantity", to: "cart_staches#update_quantity"
 
   root "categories#index"
 end

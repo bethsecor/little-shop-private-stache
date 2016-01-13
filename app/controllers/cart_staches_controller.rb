@@ -25,7 +25,7 @@ class CartStachesController < ApplicationController
 
   private
 
-    def update_params
-      params.require(:stache_in_cart).permit(:quantity, :stache_id)
-    end
+  def update_params
+    params.require(:stache_in_cart).permit(:quantity, :stache_id)
+  end
 end

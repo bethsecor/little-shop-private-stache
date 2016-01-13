@@ -2,7 +2,7 @@ require "test_helper"
 
 class AdjustQuantityInCartTest < ActionDispatch::IntegrationTest
   test "visitor adjusts quantity of a stache in cart" do
-    stache = create(:stache)
+    create(:stache)
 
     visit staches_path
     click_on "Add to Cart"
