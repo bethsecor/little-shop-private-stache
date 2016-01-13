@@ -1,5 +1,10 @@
 # This will guess the User class
-FactoryGirl.define do
+FactoryGirl.define do  factory :user do
+    username "MyString"
+password_digest "MyString"
+role 1
+  end
+
   factory :stache do
     name
     description
