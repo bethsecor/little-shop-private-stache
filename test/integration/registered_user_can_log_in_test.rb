@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class RegisteredUserCanLogInTest < ActionDispatch::IntegrationTest
   test "a registered user can login" do
