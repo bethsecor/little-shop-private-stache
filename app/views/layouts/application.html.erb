@@ -19,7 +19,7 @@
 </nav>
 
 <% flash.each do |type, msg| %>
-  <%= content_tag :div, msg, class: "flash_#{type}" %>
+  <%= content_tag :div, sanitize(msg), class: "flash_#{type}" %>
 <% end %>
 
 <%= yield %>
