@@ -8,7 +8,6 @@ class NewUserCanRegisterTest < ActionDispatch::IntegrationTest
     fill_in "Username", with: "Dan"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
-
     click_on "Create Account"
     user = User.last
 
