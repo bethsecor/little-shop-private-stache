@@ -28,3 +28,7 @@ nav {
 .flash_removed {
   color: green;
 }
+
+.stache_in_cart {
+  display: inline;
+}
