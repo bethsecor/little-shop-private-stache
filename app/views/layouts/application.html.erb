@@ -13,10 +13,14 @@
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">Private Stache</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="/cart">View Cart</a></li>
+      <li><a href="/cart">View Cart(<%= @cart.total_quantity %>)</a></li>
     </ul>
   </div>
 </nav>
+
+<% flash.each do |type, msg| %>
+  <%= content_tag :div, msg, class: "flash_#{type}" %>
+<% end %>
 
 <%= yield %>
 

@@ -10,6 +10,9 @@ class CartStachesController < ApplicationController
     stache = Stache.find(params[:id])
     @cart.delete_stache(stache.id)
     session[:cart] = @cart.contents
-    redirect_to cart_path
+    stache_link = view_context.link_to stache.name, stache_path(stache)
+    flash.now[:removed] =
+    "Successfully removed #{stache_link} from your cart.".html_safe
+    render "carts/show"
   end
 end

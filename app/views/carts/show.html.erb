@@ -1,7 +1,6 @@
 <h1 class="center">Cart</h1>
-
-<ul class="collection">
-  <%= render partial: "stache", collection: @staches %>
+<ul class="collection cart">
+  <%= render partial: "stache", collection: @staches if @staches %>
   <li class="collection-item light-green lighten-4 right-align brown-text">
     Total Staches: <%= @cart.total_quantity %>
   </li>

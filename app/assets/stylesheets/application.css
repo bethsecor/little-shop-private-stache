@@ -24,3 +24,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
+
+.flash_removed {
+  color: green;
+}
