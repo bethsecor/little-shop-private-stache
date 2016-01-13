@@ -1,9 +1,43 @@
 # This will guess the User class
 FactoryGirl.define do
   factory :user do
-    username "User"
-    password_digest "password"
+    sequence(:username) { |n| "User#{n}"}
+    sequence(:password) { |n| "password#{n}"}
+
+    # factory :user_with_orders do
+    #   transient do
+    #     orders_count 3
+    #   end
+    #   after(:create) do |user, evaluator|
+    #     create_list(:order_with_staches, evaluator.orders_count, user: user)
+    #   end
+    # end
   end
+
+  factory :order do
+    user
+    # factory :order_with_staches do
+    #   transient do
+    #     staches_count 3
+    #   end
+    #   after(:create) do |order, evaluator|
+    #     create_list(:order_stache_with_staches, evaluator.staches_count, order: order)
+    #   end
+    # end
+  end
+
+  # factory :order_stache do
+  #   sequence(:quantity) { |n| n }
+  #
+  #   factory :order_stache_with_staches do
+  #     transient do
+  #       order_staches_count 3
+  #     end
+  #     after(:create) do |order_stache, evaluator|
+  #       create_list(:stache, evaluator.order_staches_count, order_stache: order_stache)
+  #     end
+  #   end
+  # end
 
   factory :stache do
     name
