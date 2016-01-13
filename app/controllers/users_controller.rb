@@ -16,8 +16,6 @@ class UsersController < ApplicationController
     render :dashboard
   end
 
-
-
   private
 
   def user_params

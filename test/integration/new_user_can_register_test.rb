@@ -14,6 +14,5 @@ class NewUserCanRegisterTest < ActionDispatch::IntegrationTest
 
     assert_equal dashboard_path, current_path
     assert page.has_content?("Logged In As: #{user.username}")
-
   end
 end
