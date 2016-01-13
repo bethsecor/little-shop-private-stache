@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :store_location
 
   def store_location
-    session[:forwarding_url] = request.url if request.get?
+    session[:forwarding_url] = request.path if request.get?
   end
 
   def redirect_back_or(default = staches_path)
