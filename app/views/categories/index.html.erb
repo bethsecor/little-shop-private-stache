@@ -4,3 +4,6 @@
     <%= render @categories %>
   </div>
 </div>
+<% unless current_user %>
+  <%= link_to("Create Account", new_user_path, class: "waves-effect waves-light btn") %>
+<% end %>
