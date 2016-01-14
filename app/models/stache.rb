@@ -5,7 +5,7 @@ class Stache < ActiveRecord::Base
   has_many :orders, through: :order_staches
 
   def rounded_price
-    "%.2f" % price
+    format("%.2f", price)
   end
 
   def quantity
@@ -17,6 +17,6 @@ class Stache < ActiveRecord::Base
   end
 
   def subtotal
-    "%.2f" % subtotal_num
+    format("%.2f", subtotal_num)
   end
 end

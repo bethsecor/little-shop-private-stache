@@ -4,10 +4,10 @@ class Order < ActiveRecord::Base
   has_many :staches, through: :order_staches
 
   def total
-    staches.map { |stache| stache.subtotal_num }.sum
+    staches.map(&:subtotal_num).sum
   end
 
   def completed?
-    ["completed", "cancelled"].include?(status) ? "Yes" : "No"
+    %w(completed cancelled).include?(status) ? "Yes" : "No"
   end
 end
