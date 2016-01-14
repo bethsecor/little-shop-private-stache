@@ -8,16 +8,18 @@ h3 {
 }
 
 footer {
-   position:relative;
+   position:absolute;
    bottom: 0;
    width: 100%;
 }
 footer.page-footer {
-  background-color: saddlebrown;
+  background-color: #AD7A4E;
+  margin-top: 90px;
+  max-height: 120px;
 }
-
+/*----NAV BAR----*/
 nav {
-  background-color: saddlebrown;
+  background-color: #AD7A4E;
   color: black;
 }
 .logo-box {
@@ -50,16 +52,20 @@ nav {
 .login-logout {
   padding-right: 5px;
 }
-.collection {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .flash_removed {
   color: green;
 }
-
+/*----CART----*/
 .stache_in_cart {
-  display: inline;
+  display: block;
+  width: 50px;
+}
+.cart_data {
+  margin-left: 95%;
+  width: 200px;
+}
+.collection {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }

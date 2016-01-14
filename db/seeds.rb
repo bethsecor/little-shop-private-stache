@@ -5,19 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+pic = "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg"
 stache_1 = Stache.create(name: "Handlebar", description: "things", price: 5.0,
-                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
+                         image_url: pic)
 stache_2 = Stache.create(name: "Chevron", description: "things", price: 3.0,
-                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
+                         image_url: pic)
 stache_3 = Stache.create(name: "Dali", description: "things", price: 10.0,
-                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
+                         image_url: pic)
 stache_4 = Stache.create(name: "English", description: "things", price: 9.0,
-                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
+                         image_url: pic)
 stache_5 = Stache.create(name: "Fu Manchu", description: "things", price: 4.0,
-                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
+                         image_url: pic)
 stache_6 = Stache.create(name: "Pencil", description: "things", price: 4.0,
-                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
+                         image_url: pic)
 cat_1 = Category.create(title: "Cowboy")
 cat_2 = Category.create(title: "Hipster")
 cat_3 = Category.create(title: "Old English")
@@ -34,12 +34,12 @@ stache_7 = Stache.create(name: "Mustachio",
                          description: "things",
                          price: 50.00,
                          retired: true,
-                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
+                         image_url: pic)
 stache_8 = Stache.create(name: "The Lenny",
                          description: "A true mustache.",
                          price: 5000.00,
                          retired: true,
-                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
+                         image_url: pic)
 order_1 = Order.new
 
 order_stache_1 = OrderStache.create(order_id: order_1.id,
