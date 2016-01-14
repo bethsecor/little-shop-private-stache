@@ -4,6 +4,7 @@
   <title>LittleShopPrivateStache</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,10 +18,15 @@
         <%= link_to("Logout", logout_path, method: :delete, class: "waves-effect waves-light btn right") %>
         <p id="credentials" class="right">Logged In As: <%= current_user.username %> </p>
       <% else %>
-        <%= link_to "Login", login_path, class: "waves-effect waves-light btn right"%>
+        <%= link_to "L", login_path, class: "btn-floating btn-large waves-effect waves-light tan right"%>
       <% end %>
 
-        <a class="navcart waves-effect waves-light btn" href="/cart">View Cart(<%= @cart.total_quantity %>)</a>
+      <div class="cart_box">
+        <a href="/cart"><i class="material-icons shoppingcart wheat-text">shopping_cart</i></a>
+        <a class="cart_total" href="/cart">(<%= @cart.total_quantity %>)</a>
+      </div>
+
+
 
       <div class="logo-box">
         <a href="/"><img class="responsive-img" src=" <%=random_stache%> " id="logo" /></a>

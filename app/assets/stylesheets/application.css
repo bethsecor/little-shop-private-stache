@@ -19,19 +19,30 @@ nav {
   color: black;
 }
 .logo-box {
-  text-align: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-#logo {
+  display: block;
+  margin: auto;
   max-width: 280px;
   width: 30%;
   min-width: 180px;
+  text-align: center;
 }
-.navcart {
-padding-top: 39px;
+#logo {
+  max-width: 280px;
+  width: 100%;
+  min-width: 180px;
+}
+.cart_box {
+  width: 100px;
+  padding-left: 10%
 
+}
+.shoppingcart {
+  position: absolute;
+
+}
+.cart_total {
+  position: absolute;
+  right: 90%
 }
 .collection {
   width: 80%;
