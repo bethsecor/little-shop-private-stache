@@ -23,7 +23,7 @@ class CartStachesController < ApplicationController
   def update_quantity
     stache_id = update_params[:stache_id]
     quantity = update_params[:quantity]
-    session[:cart][stache_id] = quantity.to_f
+    session[:cart][stache_id] = quantity.to_i
     redirect_to cart_path
   end
 
