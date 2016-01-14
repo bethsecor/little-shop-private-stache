@@ -23,7 +23,7 @@
        </div>
        <div class="card-action">
          <%= link_to("Add to Cart", cart_staches_path(stache_id: @stache.id),
-         method: :post) unless @stache.retired %>
+         method: :post) unless @stache.retired? %>
        </div>
      </div>
    </div>
