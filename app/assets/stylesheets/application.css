@@ -15,6 +15,7 @@ footer {
 footer.page-footer {
   background-color: #AD7A4E;
   margin-top: 90px;
+  position: inherit;
   max-height: 120px;
 }
 /*----NAV BAR----*/
