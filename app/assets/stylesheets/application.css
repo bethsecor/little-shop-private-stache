@@ -4,6 +4,10 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+h3 {
+  font-family: 'Architects Daughter', cursive;
+  color: wheat;
+}
 
 footer {
    position:relative;
@@ -18,7 +22,36 @@ nav {
   background-color: saddlebrown;
   color: black;
 }
+.logo-box {
+  display: block;
+  margin: auto;
+  max-width: 280px;
+  width: 30%;
+  min-width: 180px;
+  text-align: center;
+}
+#logo {
+  max-width: 280px;
+  width: 100%;
+  min-width: 180px;
+}
+.cart_box {
+  width: 100px;
+  padding-left: 5%
 
+}
+.shoppingcart {
+  position: absolute;
+
+}
+.cart_total {
+  position: absolute;
+  right: 94.6%;
+  color: yellow;
+}
+.login-logout {
+  padding-right: 5px;
+}
 .collection {
   width: 80%;
   margin-left: auto;
