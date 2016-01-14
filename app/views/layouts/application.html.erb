@@ -18,11 +18,11 @@
         <%= link_to("Logout", logout_path, method: :delete, class: "waves-effect waves-light btn right") %>
         <p id="credentials" class="right">Logged In As: <%= current_user.username %> </p>
       <% else %>
-        <%= link_to "L", login_path, class: "btn-floating btn-large waves-effect waves-light tan right"%>
+        <%= link_to "L", login_path, id: "Login", class: "btn-floating btn-large waves-effect waves-light tan right"%>
       <% end %>
 
       <div class="cart_box">
-        <a href="/cart"><i class="material-icons shoppingcart wheat-text">shopping_cart</i></a>
+        <a id="View Cart" href="/cart"><i class="material-icons shoppingcart wheat-text">shopping_cart</i></a>
         <a class="cart_total" href="/cart">(<%= @cart.total_quantity %>)</a>
       </div>
 
