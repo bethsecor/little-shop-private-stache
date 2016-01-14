@@ -4,12 +4,12 @@
   <div class="order-stache">
     Stache: <%= link_to stache.name, stache_path(stache) %><br>
     Quantity: <%= stache.quantity %><br>
-    Subtotal: <%= stache.subtotal %><br>
+    Subtotal: $<%= stache.subtotal %><br>
   </div>
 <% end %>
 
 Order Status: <%= @order.status %><br>
-Total: <%= @order.total %><br>
-Order Placed: <%= @order.created_at %><br>
+Total: $<%= @order.total %><br>
+Order Placed: <%= @order.formatted_created_date%><br>
 Order Complete: <%= @order.completed? %><br>
-Order Updated At: <%= @order.updated_at %>
+Order Updated At: <%= @order.formatted_updated_date %>

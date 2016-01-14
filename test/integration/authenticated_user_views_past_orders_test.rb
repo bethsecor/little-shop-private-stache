@@ -26,12 +26,12 @@ class AuthenticatedUserViewsPastOrdersTest < ActionDispatch::IntegrationTest
     ApplicationController.any_instance.stubs(:current_user).returns(user)
     visit orders_path
 
+    save_and_open_page
     assert page.has_content?("Orders:")
     user.orders.each do |order|
-      assert page.has_content?("Order Number: #{order.id}")
-      order.staches.each do |stache|
-        assert page.has_content?("#{stache.name}: #{stache.quantity}")
-      end
+      assert page.has_content?("#{order.id}")
+      assert page.has_content?("#{order.status.capitalize}")
+      assert page.has_link?("View Order Details")
     end
   end
 end
