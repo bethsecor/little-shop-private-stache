@@ -6,7 +6,7 @@
         <span class="card-title black-text"><%= link_to stache.name, stache_path(stache) %></span>
       </div>
         <p><%= stache.description %></p>
-        <p>Price: $<%= stache.price %></p>
+        <p>Price: <%= number_to_currency(stache.price) %></p>
       </div>
       <div class="card-action">
         <%= link_to "Add to Cart", cart_staches_path(stache_id: stache.id), method: :post %>

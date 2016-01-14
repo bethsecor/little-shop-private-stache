@@ -3,7 +3,7 @@
   <span class="title"><%= stache.name %></span>
   <p><%= stache.description %>
   </p>
-  <p class="secondary-content right-align">item price: $<%= stache.rounded_price %><br>
+  <p class="secondary-content right-align">item price: <%= number_to_currency(stache.price) %><br>
     <%= form_for(:stache_in_cart, url: 'update_quantity') do |f| %>
     <div class="stache_in_cart">
       <%= f.label :quantity %>:
@@ -14,5 +14,4 @@
     <% end %>
   <%= link_to "Remove From Cart", cart_stache_path(stache.id), method: :delete %>
 </p>
-
 </li>

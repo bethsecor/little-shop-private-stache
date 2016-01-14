@@ -27,6 +27,9 @@ class Cart
   end
 
   def total_cost
-    "%.2f" % contents.map {|stache_id, quantity| Stache.find(stache_id).price * quantity}.sum
+    costs = contents.map do
+              |stache_id, quantity| Stache.find(stache_id).price * quantity
+    end
+    costs.sum
   end
 end

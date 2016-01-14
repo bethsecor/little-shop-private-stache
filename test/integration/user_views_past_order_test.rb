@@ -36,17 +36,17 @@ class UserViewsPastOrderTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Order Number: #{order.id}")
 
     order.staches.each do |stache|
-      assert page.has_content?("Stache: #{stache.name}")
       assert page.has_link?(stache.name)
-      assert page.has_content?("Quantity: #{stache.quantity}")
-      assert page.has_content?("Subtotal: $#{stache.subtotal}")
+      assert page.has_content?("#{stache.quantity}")
+      assert page.has_content?("#{stache.subtotal}")
     end
-    
-    assert page.has_content?("Order Status: #{order.status}")
+
+    assert page.has_content?("Order Status: #{order.status.capitalize}")
     assert page.has_content?("Total: $#{order.total}")
     assert page.has_content?("Order Placed: #{order.formatted_created_date}")
     assert page.has_content?("Order Complete: #{order.completed?}")
-    assert page.has_content?("Order Updated At: #{order.formatted_updated_date}")
+    assert page.has_content?("Order Last Updated:\
+                              #{order.formatted_updated_date}")
 
     click_on "#{stache_3.name}"
     refute page.has_link?("Add to Cart")

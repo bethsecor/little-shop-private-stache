@@ -7,17 +7,23 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 stache_1 = Stache.create(name: "Handlebar", description: "things", price: 5.0,
-                         image_url: "http://images.clipartpanda.com/mustache-clipart-ecMA4abcn.svg")
+                         image_url: "http://images.clipartpanda.com/\
+                         mustache-clipart-ecMA4abcn.svg")
 stache_2 = Stache.create(name: "Chevron", description: "things", price: 3.0,
-                         image_url: "http://images.clipartpanda.com/mustache-clipart-ecMA4abcn.svg")
+                         image_url: "http://images.clipartpanda.com/\
+                         mustache-clipart-ecMA4abcn.svg")
 stache_3 = Stache.create(name: "Dali", description: "things", price: 10.0,
-                         image_url: "http://images.clipartpanda.com/mustache-clipart-ecMA4abcn.svg")
+                         image_url: "http://images.clipartpanda.com/\
+                         mustache-clipart-ecMA4abcn.svg")
 stache_4 = Stache.create(name: "English", description: "things", price: 9.0,
-                         image_url: "http://images.clipartpanda.com/mustache-clipart-ecMA4abcn.svg")
+                         image_url: "http://images.clipartpanda.com/\
+                         mustache-clipart-ecMA4abcn.svg")
 stache_5 = Stache.create(name: "Fu Manchu", description: "things", price: 4.0,
-                         image_url: "http://images.clipartpanda.com/mustache-clipart-ecMA4abcn.svg")
+                         image_url: "http://images.clipartpanda.com/\
+                         mustache-clipart-ecMA4abcn.svg")
 stache_6 = Stache.create(name: "Pencil", description: "things", price: 4.0,
-                         image_url: "http://images.clipartpanda.com/mustache-clipart-ecMA4abcn.svg")
+                         image_url: "http://images.clipartpanda.com/\
+                         mustache-clipart-ecMA4abcn.svg")
 cat_1 = Category.create(title: "Cowboy")
 cat_2 = Category.create(title: "Hipster")
 cat_3 = Category.create(title: "Old English")
@@ -30,16 +36,18 @@ stache_5.categories << cat_1
 stache_6.categories << cat_2
 
 user = User.create(username: "beth", password: "123")
-stache_7 = Stache.create(name: "Mustachio",
-                         description: "things",
-                         price: 50.00,
-                         retired: true,
-                         image_url: "http://images.clipartpanda.com/mustache-clipart-ecMA4abcn.svg")
+Stache.create(name: "Mustachio",
+              description: "things",
+              price: 50.00,
+              retired: true,
+              image_url: "http://images.clipartpanda.com/\
+              mustache-clipart-ecMA4abcn.svg")
 stache_8 = Stache.create(name: "The Lenny",
-                        description: "A true mustache.",
-                        price: 5000.00,
-                        retired: true,
-                        image_url: "http://images.clipartpanda.com/mustache-clipart-ecMA4abcn.svg")
+                         description: "A true mustache.",
+                         price: 5000.00,
+                         retired: true,
+                         image_url: "http://images.clipartpanda.com/\
+                         mustache-clipart-ecMA4abcn.svg")
 order = Order.new
 
 order_stache_1 = OrderStache.create(order_id: order.id,

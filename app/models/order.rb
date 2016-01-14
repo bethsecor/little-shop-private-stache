@@ -4,7 +4,7 @@ class Order < ActiveRecord::Base
   has_many :staches, through: :order_staches
 
   def total
-    staches.map(&:subtotal_num).sum
+    staches.map(&:subtotal).sum
   end
 
   def completed?
