@@ -32,3 +32,34 @@ nav {
 .stache_in_cart {
   display: inline;
 }
+
+/*Mustache Me*/
+.camera_element {
+  width: 500px;
+}
+
+.image {
+  max-width: 250px;
+  top: 450px;
+  left: 340px;
+  position: absolute;
+    height: auto;
+}
+
+.camera {
+  width: 1000px;
+
+}
+
+.capture {
+  top: 300px;
+  right: 200px;
+  position: absolute;
+  width: 200px;
+}
+
+.user_image {
+  width: 800px;
+  height: 600px;
+}
+/*Mustache me end*/

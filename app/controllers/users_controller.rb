@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  helper :headshot
+
   def new
     @user = User.new
   end
@@ -16,6 +18,15 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     render :dashboard
+  end
+
+  def mustache_me
+
+  end
+
+  def show_stache
+
+    @photo = HeadshotPhoto.last
   end
 
   private
