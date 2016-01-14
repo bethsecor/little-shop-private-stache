@@ -1,8 +1,6 @@
 body {
   background-color: tan;
-  display: flex;
   min-height: 100vh;
-  flex-direction: column;
 }
 
 footer {

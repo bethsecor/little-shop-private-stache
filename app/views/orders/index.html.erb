@@ -1,33 +1,22 @@
-<h1>Orders:</h1>
-<!-- <div class="order">
-  <% @orders.each do |order| %>
-    Order Number: <%= order.id %><br>
-    Staches in this order:
-    <ul>
-      <% order.staches.each do |stache| %>
-      <li><%= stache.name %>: <%= stache.quantity %></li>
+<div class="container transparent">
+  <h1>Orders:</h1>
+
+  <table class="centered boreded">
+    <thead>
+      <tr>
+          <th data-field="id">Order ID</th>
+          <th data-field="status">Status</th>
+          <th data-field="view">View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.status.capitalize %></td>
+        <td><%= link_to "View Order Details", order_path(order) %></td>
+      </tr>
       <% end %>
-    </ul>
-    <%= link_to "View Order Details", order_path(order) %>
-  <% end %>
-</div> -->
-
-<table class="striped">
-  <thead>
-    <tr>
-        <th data-field="id">Order ID</th>
-        <th data-field="status">Status</th>
-        <th data-field="view">View</th>
-    </tr>
-  </thead>
-
-        <tbody>
-          <% @orders.each do |order| %>
-          <tr>
-            <td><%= order.id %></td>
-            <td><%= order.status.capitalize %></td>
-            <td><%= link_to "View Order Details", order_path(order) %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+    </tbody>
+  </table>
+</div>
