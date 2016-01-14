@@ -4,6 +4,10 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+h3 {
+  font-family: 'Architects Daughter', cursive;
+  color: wheat;
+}
 
 footer {
    position:relative;
@@ -33,7 +37,7 @@ nav {
 }
 .cart_box {
   width: 100px;
-  padding-left: 10%
+  padding-left: 5%
 
 }
 .shoppingcart {
@@ -42,7 +46,11 @@ nav {
 }
 .cart_total {
   position: absolute;
-  right: 90%
+  right: 94.6%;
+  color: yellow;
+}
+.login-logout {
+  padding-right: 5px;
 }
 .collection {
   width: 80%;

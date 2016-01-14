@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,10 +16,9 @@
   <nav>
     <div class="nav-wrapper">
       <% if current_user %>
-        <%= link_to("Logout", logout_path, method: :delete, class: "waves-effect waves-light btn right") %>
-        <p id="credentials" class="right">Logged In As: <%= current_user.username %> </p>
+        <%= link_to("Logout", logout_path, method: :delete, class: "right yellow-text login-logout") %>
       <% else %>
-        <%= link_to "L", login_path, id: "Login", class: "btn-floating btn-large waves-effect waves-light tan right"%>
+        <%= link_to "Login", login_path, id: "Login", class:"right yellow-text login-logout"%>
       <% end %>
 
       <div class="cart_box">
@@ -26,20 +26,20 @@
         <a class="cart_total" href="/cart">(<%= @cart.total_quantity %>)</a>
       </div>
 
-
-
       <div class="logo-box">
         <a href="/"><img class="responsive-img" src=" <%=random_stache%> " id="logo" /></a>
       </div>
     </div>
   </nav>
 </div>
-
+<% if current_user %>
+  <p id="credentials" class="right white-text hide-on-small-only">Logged In As: <%= current_user.username %> </p>
+<% end %>
 
 <% flash.each do |type, msg| %>
   <%= content_tag :div, sanitize(msg), class: "flash_#{type}" %>
 <% end %>
-
+<br>
 <%= yield %>
 
 <footer class="page-footer saddlebrown">
