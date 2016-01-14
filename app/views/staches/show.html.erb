@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <img src="<%= @stache.image_url %>">
+        <span class="card-title"><%= @stache.name %></span>
+      </div>
+      <div class="card-content">
+        <p><%= @stache.name %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to "See all staches", staches_path %>
+        <%= link_to "Stache categories", root_path %>
+      </div>
+    </div>
+  </div>
+
+   <div class="col s12 m4">
+     <div class="card white darken-1">
+       <div class="card-content brown-text">
+         <span class="card-title"><%= @stache.name %></span>
+         <p><%= @stache.description %></p>
+       </div>
+       <div class="card-action">
+         <%= link_to "Add to Cart", cart_staches_path(stache_id: @stache.id), method: :post %>
+       </div>
+     </div>
+   </div>
+ </div>

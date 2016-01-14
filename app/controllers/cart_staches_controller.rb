@@ -3,7 +3,11 @@ class CartStachesController < ApplicationController
     stache = Stache.find(params[:stache_id])
     @cart.add_stache(stache.id)
     session[:cart] = @cart.contents
-    redirect_back_or staches_path
+    if session[:forwarding_url] == stache_path(stache)
+      redirect_to cart_path
+    else
+      redirect_back_or staches_path
+    end
   end
 
   def destroy
@@ -11,9 +15,9 @@ class CartStachesController < ApplicationController
     @cart.delete_stache(stache.id)
     session[:cart] = @cart.contents
     stache_link = view_context.link_to stache.name, stache_path(stache)
-    flash[:removed] =
+    flash.now[:removed] =
     "Successfully removed #{stache_link} from your cart.".html_safe
-    redirect_to cart_path
+    render "carts/show"
   end
 
   def update_quantity
