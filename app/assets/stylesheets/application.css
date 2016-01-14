@@ -36,6 +36,9 @@ nav {
 /*Mustache Me*/
 .camera_element {
   width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .image {
@@ -48,6 +51,7 @@ nav {
 
 .camera {
   width: 1000px;
+  left: 300px;
 
 }
 
@@ -61,5 +65,8 @@ nav {
 .user_image {
   width: 800px;
   height: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*Mustache me end*/

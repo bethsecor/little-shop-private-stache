@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def show_stache
-
+    sleep(1.5)
     @photo = HeadshotPhoto.last
   end
 
