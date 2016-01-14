@@ -8,7 +8,7 @@ class AdjustQuantityInCartTest < ActionDispatch::IntegrationTest
     click_on "Add to Cart"
     click_on "View Cart"
     fill_in "Quantity", with: 3
-    click_on "Update quantity"
+    click_on "Update"
 
     assert page.has_content? "3"
   end
