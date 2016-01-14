@@ -1,0 +1,15 @@
+<h1>Order Number: <%= @order.id %></h1>
+
+<% @order.staches.each do |stache| %>
+  <div class="order-stache">
+    Stache: <%= link_to stache.name, stache_path(stache) %><br>
+    Quantity: <%= stache.quantity %><br>
+    Subtotal: <%= stache.subtotal %><br>
+  </div>
+<% end %>
+
+Order Status: <%= @order.status %><br>
+Total: <%= @order.total %><br>
+Order Placed: <%= @order.created_at %><br>
+Order Complete: <%= @order.completed? %><br>
+Order Updated At: <%= @order.updated_at %>

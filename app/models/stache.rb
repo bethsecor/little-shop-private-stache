@@ -11,4 +11,12 @@ class Stache < ActiveRecord::Base
   def quantity
     order_staches.first.quantity
   end
+
+  def subtotal_num
+    quantity * price
+  end
+
+  def subtotal
+    "%.2f" % subtotal_num
+  end
 end
