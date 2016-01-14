@@ -3,12 +3,4 @@ class Stache < ActiveRecord::Base
   has_many :categories, through: :stache_categories
   has_many :order_staches
   has_many :orders, through: :order_staches
-
-  def quantity
-    order_staches.first.quantity
-  end
-
-  def subtotal
-    quantity * price
-  end
 end

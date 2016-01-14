@@ -14,7 +14,7 @@
       <tr>
         <td><%= order.id %></td>
         <td><%= order.status.capitalize %></td>
-        <td><%= link_to "View Order Details", order_path(order) %></td>
+        <td><%= link_to "View Order Details", order_path(order), { id: "order-#{order.id}" } %></td>
       </tr>
       <% end %>
     </tbody>

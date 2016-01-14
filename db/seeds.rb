@@ -7,23 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 stache_1 = Stache.create(name: "Handlebar", description: "things", price: 5.0,
-                         image_url: "http://images.clipartpanda.com/\
-                         mustache-clipart-ecMA4abcn.svg")
+                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
 stache_2 = Stache.create(name: "Chevron", description: "things", price: 3.0,
-                         image_url: "http://images.clipartpanda.com/\
-                         mustache-clipart-ecMA4abcn.svg")
+                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
 stache_3 = Stache.create(name: "Dali", description: "things", price: 10.0,
-                         image_url: "http://images.clipartpanda.com/\
-                         mustache-clipart-ecMA4abcn.svg")
+                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
 stache_4 = Stache.create(name: "English", description: "things", price: 9.0,
-                         image_url: "http://images.clipartpanda.com/\
-                         mustache-clipart-ecMA4abcn.svg")
+                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
 stache_5 = Stache.create(name: "Fu Manchu", description: "things", price: 4.0,
-                         image_url: "http://images.clipartpanda.com/\
-                         mustache-clipart-ecMA4abcn.svg")
+                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
 stache_6 = Stache.create(name: "Pencil", description: "things", price: 4.0,
-                         image_url: "http://images.clipartpanda.com/\
-                         mustache-clipart-ecMA4abcn.svg")
+                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
 cat_1 = Category.create(title: "Cowboy")
 cat_2 = Category.create(title: "Hipster")
 cat_3 = Category.create(title: "Old English")
@@ -35,33 +29,68 @@ stache_4.categories << cat_4
 stache_5.categories << cat_1
 stache_6.categories << cat_2
 
-user = User.create(username: "beth", password: "123")
-Stache.create(name: "Mustachio",
-              description: "things",
-              price: 50.00,
-              retired: true,
-              image_url: "http://images.clipartpanda.com/\
-              mustache-clipart-ecMA4abcn.svg")
+user_1 = User.create(username: "beth", password: "123")
+stache_7 = Stache.create(name: "Mustachio",
+                         description: "things",
+                         price: 50.00,
+                         retired: true,
+                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
 stache_8 = Stache.create(name: "The Lenny",
                          description: "A true mustache.",
                          price: 5000.00,
                          retired: true,
-                         image_url: "http://images.clipartpanda.com/\
-                         mustache-clipart-ecMA4abcn.svg")
-order = Order.new
+                         image_url: "https://pbs.twimg.com/profile_images/1369149006/ronProfile_400x400.jpg")
+order_1 = Order.new
 
-order_stache_1 = OrderStache.create(order_id: order.id,
+order_stache_1 = OrderStache.create(order_id: order_1.id,
                                     stache_id: stache_1.id,
                                     quantity: 2)
-order_stache_2 = OrderStache.create(order_id: order.id,
+order_stache_2 = OrderStache.create(order_id: order_1.id,
                                     stache_id: stache_2.id,
                                     quantity: 9)
-order_stache_3 = OrderStache.create(order_id: order.id,
+order_stache_3 = OrderStache.create(order_id: order_1.id,
                                     stache_id: stache_8.id,
                                     quantity: 1)
 
-order.order_staches << order_stache_1
-order.order_staches << order_stache_2
-order.order_staches << order_stache_3
+order_1.order_staches << order_stache_1
+order_1.order_staches << order_stache_2
+order_1.order_staches << order_stache_3
 
-user.orders << order
+user_1.orders << order_1
+
+order_2 = Order.new
+
+order_stache_4 = OrderStache.create(order_id: order_2.id,
+                                    stache_id: stache_5.id,
+                                    quantity: 3)
+order_stache_5 = OrderStache.create(order_id: order_2.id,
+                                    stache_id: stache_2.id,
+                                    quantity: 100)
+order_stache_6 = OrderStache.create(order_id: order_2.id,
+                                    stache_id: stache_7.id,
+                                    quantity: 84)
+
+order_2.order_staches << order_stache_4
+order_2.order_staches << order_stache_5
+order_2.order_staches << order_stache_6
+
+user_1.orders << order_2
+
+user_2 = User.create(username: "steve", password: "123")
+order_3 = Order.new
+
+order_stache_7 = OrderStache.create(order_id: order_3.id,
+                                    stache_id: stache_1.id,
+                                    quantity: 60)
+order_stache_8 = OrderStache.create(order_id: order_3.id,
+                                    stache_id: stache_2.id,
+                                    quantity: 99)
+order_stache_9 = OrderStache.create(order_id: order_3.id,
+                                    stache_id: stache_8.id,
+                                    quantity: 13)
+
+order_3.order_staches << order_stache_7
+order_3.order_staches << order_stache_8
+order_3.order_staches << order_stache_9
+
+user_2.orders << order_3

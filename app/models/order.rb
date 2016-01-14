@@ -4,7 +4,15 @@ class Order < ActiveRecord::Base
   has_many :staches, through: :order_staches
 
   def total
-    staches.map(&:subtotal).sum
+    staches.map { |stache| subtotal(stache) }.sum
+  end
+
+  def quantity(stache)
+    order_staches.find_by(stache_id: stache.id).quantity
+  end
+
+  def subtotal(stache)
+    quantity(stache) * stache.price
   end
 
   def completed?

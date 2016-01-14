@@ -14,8 +14,8 @@
       <% @order.staches.each do |stache| %>
         <tr>
           <td><%= link_to stache.name, stache_path(stache) %></td>
-          <td><%= stache.quantity %></td>
-          <td><%= number_to_currency(stache.subtotal) %></td>
+          <td><%= @order.quantity(stache) %></td>
+          <td><%= number_to_currency(@order.subtotal(stache)) %></td>
         </tr>
       <% end %>
       <tr>
