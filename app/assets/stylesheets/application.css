@@ -1,16 +1,24 @@
 body {
-  background-color: tan;
+  /*background-image: url("vintage.jpg");*/
+  background-color: blanchedalmond;
   min-height: 100vh;
 }
 h3 {
   font-family: 'Architects Daughter', cursive;
-  color: wheat;
+  color: brown;
+}
+
+.preview img {
+  max-width: 250px;
+  margin: auto;
+  display: block;
 }
 
 footer {
-   position:absolute;
+   position:inherit;
    bottom: 0;
    width: 100%;
+   height: 150px;
 }
 footer.page-footer {
   background-color: #AD7A4E;
@@ -47,7 +55,7 @@ nav {
 .cart_total {
   position: absolute;
   right: 94.6%;
-  color: yellow;
+  color: brown;
 }
 .login-logout {
   padding-right: 5px;

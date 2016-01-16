@@ -16,9 +16,9 @@
   <nav>
     <div class="nav-wrapper">
       <% if current_user %>
-        <%= link_to("Logout", logout_path, method: :delete, class: "right yellow-text login-logout") %>
+        <%= link_to("Logout", logout_path, method: :delete, class: "right brown-text login-logout") %>
       <% else %>
-        <%= link_to "Login", login_path, id: "Login", class:"right yellow-text login-logout"%>
+        <%= link_to "Login", login_path, id: "Login", class:"right brown-text login-logout"%>
       <% end %>
 
       <div class="cart_box">
@@ -33,7 +33,7 @@
   </nav>
 </div>
 <% if current_user %>
-  <p id="credentials" class="right white-text hide-on-small-only">Logged In As: <%= current_user.username %> </p>
+  <p id="credentials" class="right brown-text hide-on-small-only">Logged In As: <%= current_user.username %> </p>
 <% end %>
 
 <% flash.each do |type, msg| %>
