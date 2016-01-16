@@ -6,4 +6,8 @@ class OrdersController < ApplicationController
   def show
     @order = Order.joins(:staches).find(params[:id])
   end
+
+  def new
+    @order = Order.new
+  end
 end

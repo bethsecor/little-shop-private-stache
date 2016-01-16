@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :staches, only: [:index, :show]
   resources :categories, only: [:index, :show]
   resources :users, only: [:new, :create]
-  resources :orders, only: [:index, :show]
+  resources :orders, only: [:index, :show, :new]
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
