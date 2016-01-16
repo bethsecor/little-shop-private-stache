@@ -45,4 +45,14 @@ class OrderTest < ActiveSupport::TestCase
 
     assert_equal 26.0, order.total
   end
+
+  test "create order staches" do
+    order = Order.create
+    stache_1, stache_2, stache_3 = create_list(:stache, 3)
+    cart = { stache_1.id.to_s => 3,
+             stache_2.id.to_s => 5,
+             stache_3.id.to_s => 2 }
+
+    assert_equal 3, order.create_order_staches(cart).count
+  end
 end

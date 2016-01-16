@@ -28,4 +28,10 @@ class Order < ActiveRecord::Base
     date = updated_at.in_time_zone("Mountain Time (US & Canada)")
     date.strftime("%m/%d/%Y at %I:%M %p")
   end
+
+  def create_order_staches(cart)
+    cart.each do |stache_id, quantity|
+      order_staches.create(stache_id: stache_id, quantity: quantity)
+    end
+  end
 end
