@@ -2,7 +2,7 @@ require "test_helper"
 
 class VisitorChecksOutTest < ActionDispatch::IntegrationTest
   test "visitor checks out" do
-    stache = create(:stache)
+    create(:stache)
     user = create(:user, password: "pass")
 
     visit staches_path
@@ -16,10 +16,8 @@ class VisitorChecksOutTest < ActionDispatch::IntegrationTest
     fill_in "Username", with: user.username
     fill_in "Password", with: "pass"
     click_on "Log In"
-    visit cart_path
-    click_on "Checkout"
 
-    assert_equal current_path, new_order_path
+    assert_equal new_order_path, current_path
 
     fill_in "First Name", with: "Beth"
     fill_in "Last Name", with: "Secor"

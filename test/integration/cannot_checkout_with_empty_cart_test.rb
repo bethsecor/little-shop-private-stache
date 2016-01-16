@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class CannotCheckoutWithEmptyCartTest < ActionDispatch::IntegrationTest
   test "checkout button disabled when cart is empty" do

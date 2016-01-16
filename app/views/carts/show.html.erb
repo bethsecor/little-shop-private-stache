@@ -1,16 +1,21 @@
-<h1 class="center">Cart</h1>
-<ul class="collection cart">
-  <%= render partial: "stache", collection: @staches if @staches %>
-  <li class="collection-item light-green lighten-4 right-align brown-text">
-    Total Staches: <%= @cart.total_quantity %>
-  </li>
-  <li class="collection-item light-green lighten-4 right-align brown-text">
-    Total Price: <%= number_to_currency(@cart.total_cost) %>
-  </li>
-</ul>
+<h1 class="center">Stache Stash</h1>
 
-<% if @cart.contents.empty? %>
-  <%= link_to "Checkout", class: "btn disabled" %>
-<% else %>
-  <%= link_to "Checkout", new_order_path, class: "btn" %>
-<% end %>
+<div class="container">
+  <ul class="collection cart">
+    <%= render partial: "stache", collection: @staches if @staches %>
+    <li class="collection-item light-green lighten-4 right-align brown-text">
+      Total Staches: <%= @cart.total_quantity %>
+    </li>
+    <li class="collection-item light-green lighten-4 right-align brown-text">
+      Total Price: <%= number_to_currency(@cart.total_cost) %>
+    </li>
+  </ul>
+
+  <div class="checkout">
+    <% if @cart.contents.empty? %>
+      <%= link_to "Checkout", class: "btn disabled checkout-btn" %>
+    <% else %>
+      <%= link_to "Checkout", new_order_path, class: "btn green darken-4 checkout-btn" %>
+    <% end %>
+  </div>
+</div>

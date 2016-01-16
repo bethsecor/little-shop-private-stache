@@ -2,7 +2,6 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :order_staches
   has_many :staches, through: :order_staches
-  # after_save :create_order_staches
 
   def total
     staches.map { |stache| subtotal(stache) }.sum
@@ -32,7 +31,7 @@ class Order < ActiveRecord::Base
 
   def create_order_staches(cart)
     cart.each do |stache_id, quantity|
-      self.order_staches.create(stache_id: stache_id, quantity: quantity)
+      order_staches.create(stache_id: stache_id, quantity: quantity)
     end
   end
 end

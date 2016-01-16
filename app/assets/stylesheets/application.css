@@ -38,7 +38,7 @@ nav {
 }
 .cart_box {
   width: 100px;
-  padding-left: 5%
+  padding-left: 6%
 
 }
 .shoppingcart {
@@ -62,11 +62,13 @@ nav {
   width: 50px;
 }
 .cart_data {
-  margin-left: 95%;
+  margin-left: 90%;
   width: 200px;
 }
 .collection {
-  width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+.checkout-btn {
+  float: right;
 }
