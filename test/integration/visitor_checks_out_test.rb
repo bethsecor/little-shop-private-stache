@@ -19,7 +19,6 @@ class VisitorChecksOutTest < ActionDispatch::IntegrationTest
     visit cart_path
     click_on "Checkout"
 
-
     assert_equal current_path, new_order_path
 
     fill_in "First Name", with: "Beth"

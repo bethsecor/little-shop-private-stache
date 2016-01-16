@@ -15,8 +15,8 @@ class OrdersController < ApplicationController
 
   def create
     @order = current_user.orders.new(order_params)
-    if @order.save
-      @order.create_order_staches(session[:cart])
+    @order_placement = OrderPlacement.new(@order, @cart.contents)
+    if @order_placement.create
       flash[:order_notice] = "Order was successfully placed."
       redirect_to order_path(@order)
     else
