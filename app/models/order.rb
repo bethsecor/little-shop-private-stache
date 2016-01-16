@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :order_staches
   has_many :staches, through: :order_staches
+  # after_save :create_order_staches
 
   def total
     staches.map { |stache| subtotal(stache) }.sum
@@ -27,5 +28,11 @@ class Order < ActiveRecord::Base
   def formatted_updated_date
     date = updated_at.in_time_zone("Mountain Time (US & Canada)")
     date.strftime("%m/%d/%Y at %I:%M %p")
+  end
+
+  def create_order_staches(cart)
+    cart.each do |stache_id, quantity|
+      self.order_staches.create(stache_id: stache_id, quantity: quantity)
+    end
   end
 end

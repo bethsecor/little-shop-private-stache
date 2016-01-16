@@ -18,9 +18,21 @@ class VisitorChecksOutTest < ActionDispatch::IntegrationTest
     click_on "Log In"
     visit cart_path
     click_on "Checkout"
-    order = Order.last
 
-    assert_equal current_path, orders_path
+
+    assert_equal current_path, new_order_path
+
+    fill_in "First Name", with: "Beth"
+    fill_in "Last Name", with: "Secor"
+    fill_in "Address", with: "1510 Blake St."
+    fill_in "City", with: "Denver"
+    fill_in "State", with: "CO"
+    fill_in "Zipcode", with: "80120"
+    click_on "Submit Order"
+
+    order = Order.last
+    assert_equal current_path, order_path(order)
+
     assert page.has_content?("Order was successfully placed")
     assert page.has_content?(order.id)
   end

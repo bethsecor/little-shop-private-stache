@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
     num = rand(1..3)
     "../assets/logos/#{num}.png"
   end
+
+  def check_current_user
+    redirect_to login_path unless current_user
+  end
 end
