@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class OnlyAdminCanViewAdminDashboardTest < ActionDispatch::IntegrationTest
   test "only admin can view admin dashboard" do
