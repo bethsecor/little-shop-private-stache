@@ -11,6 +11,7 @@ class NewUserCanRegisterTest < ActionDispatch::IntegrationTest
     click_on "Create Account"
     user = User.last
 
+    refute user.admin?
     assert_equal dashboard_path, current_path
     assert page.has_content?("Logged In As: #{user.username}")
   end
