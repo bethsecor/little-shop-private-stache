@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UserCannotViewOtherUsersOrdersTest < ActionDispatch::IntegrationTest
-  test "the truth" do
+  test "user cannot view other user's orders" do
     user1, user2 = create_list(:user, 2)
     order1 = user1.orders.create
     order2 = user1.orders.create
