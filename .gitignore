@@ -12,3 +12,5 @@
 !/log/.keep
 /tmp
 .byebug_history
+
+coverage

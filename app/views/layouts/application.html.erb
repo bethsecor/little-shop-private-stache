@@ -6,40 +6,46 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat|Kameron|Unica+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div class="navbar-fixed">
-  <nav>
     <div class="nav-wrapper">
       <% if current_user %>
-        <%= link_to("Logout", logout_path, method: :delete, class: "right yellow-text login-logout") %>
+      <%= link_to "Logout", logout_path, method: :delete, class: "right brown-text login-logout" %>
+      <%= link_to "Orders", orders_path, class:"right brown-text login-logout" %>
+      <%= link_to "Account", dashboard_path, class:"right brown-text login-logout" %>
       <% else %>
-        <%= link_to "Login", login_path, id: "Login", class:"right yellow-text login-logout"%>
+        <%= link_to "Login", login_path, id: "Login", class:"right brown-text login-logout" %>
+        <% unless request.path == new_user_path || request.path == login_path %>
+          <%= link_to "Create Account", new_user_path, class: "right brown-text login-logout" %>
+          <% end %>
       <% end %>
+      <%= link_to "Categories", categories_path, class:"right brown-text login-logout" %>
+      <%= link_to "Staches", staches_path, class:"right brown-text login-logout" %>
+      <div class="left-nav">
+        <div class="cart_box">
+          <a id="View Cart" href="/cart"><i class="material-icons shoppingcart black-text">shopping_cart</i></a>
+          <a class="cart_total" href="/cart">(<%= @cart.total_quantity %>)</a>
+        </div>
 
-      <div class="cart_box">
-        <a id="View Cart" href="/cart"><i class="material-icons shoppingcart wheat-text">shopping_cart</i></a>
-        <a class="cart_total" href="/cart">(<%= @cart.total_quantity %>)</a>
+
+          <% if current_user %>
+          <div id="credentials" class="brown-text hide-on-small-only">Logged In As: <%= current_user.username %> </div>
+          <% end %>
       </div>
 
       <div class="logo-box">
         <a href="/"><img class="responsive-img" src=" <%=random_stache%> " id="logo" /></a>
       </div>
     </div>
-  </nav>
-</div>
-<% if current_user %>
-  <p id="credentials" class="right white-text hide-on-small-only">Logged In As: <%= current_user.username %> </p>
-<% end %>
 
 <% flash.each do |type, msg| %>
   <%= content_tag :div, sanitize(msg), class: "flash_#{type}" %>
 <% end %>
-<br>
+
 <%= yield %>
 
 <footer class="page-footer saddlebrown">
