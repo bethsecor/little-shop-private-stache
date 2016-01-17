@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-pic = "http://i.imgur.com/v1b4ixD.png"
+pic = "http://i.imgur.com/kMx8J0g.png"
 stache_1 = Stache.create(name: "Handlebar", description: "things", price: 5.0,
                          image_url: pic)
 stache_2 = Stache.create(name: "Chevron", description: "things", price: 3.0,

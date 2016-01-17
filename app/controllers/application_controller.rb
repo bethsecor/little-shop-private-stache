@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def random_stache
-    num = rand(1..3)
+    num = rand(1..4)
     "../assets/logos/#{num}.png"
   end
 end
