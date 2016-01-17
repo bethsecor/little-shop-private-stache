@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
   def random_stache
     num = rand(1..4)
-    "../assets/logos/#{num}.png"
+    "/assets/logos/#{num}.png"
   end
 
   def check_current_user
