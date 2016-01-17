@@ -3,11 +3,10 @@ body {
   background-color: blanchedalmond;
   min-height: 100vh;
 }
-h3 {
+h4 {
   /*font-family: 'Montserrat', sans-serif;*/
-  /*font-family: 'Unica One', cursive;*/
-  font-family: 'Kameron', serif;
-  color: brown;
+  font-family: 'Unica One', cursive;
+  color: darkolivegreen;
 }
 
 .preview img {
