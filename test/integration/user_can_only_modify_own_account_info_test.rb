@@ -31,4 +31,14 @@ class UserCanOnlyModifyOwnAccountInfoTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Logged In As: #{User.last.username}")
   end
+
+  test "admin cannot access another user's edit page" do
+    user = User.create(username: "user", password: "password")
+    admin = User.create(username: "admin", password: "password", role: 1)
+    ApplicationController.any_instance.stubs(:current_user).returns(admin)
+
+    visit edit_user_path(user)
+
+    assert page.has_content?("The page you were looking for doesn't exist.")
+  end
 end
