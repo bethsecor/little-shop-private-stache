@@ -11,5 +11,6 @@ class AdjustQuantityInCartTest < ActionDispatch::IntegrationTest
     click_on "Update"
 
     assert page.has_content? "3"
+    refute page.has_content? "3.0"
   end
 end

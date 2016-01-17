@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get "/dashboard", to: "dashboard#show"
+  end
   resources :cart_staches, only: [:create, :destroy]
   resource :cart, only: [:show]
   resources :staches, only: [:index, :show]
   resources :categories, only: [:index, :show]
   resources :users, only: [:new, :create]
-  resources :orders, only: [:index, :show]
+  resources :orders, only: [:index, :show, :new, :create]
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

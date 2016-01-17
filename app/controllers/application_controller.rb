@@ -21,8 +21,19 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def current_admin?
+    current_user && current_user.admin?
+  end
+
   def random_stache
     num = rand(1..3)
     "../assets/logos/#{num}.png"
+  end
+
+  def check_current_user
+    if session[:forwarding_url] == new_order_path
+      session[:want_to_checkout] = true
+    end
+    redirect_to login_path unless current_user
   end
 end

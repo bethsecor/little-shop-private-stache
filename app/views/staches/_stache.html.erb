@@ -1,4 +1,4 @@
-<div class="col s12 m6">
+<div class="col s12 m6 stache-<%= stache.id %>">
   <div class="card">
     <div class="card-content">
       <div class="card-image">
@@ -8,8 +8,9 @@
         <p><%= stache.description %></p>
         <p>Price: <%= number_to_currency(stache.price) %></p>
       </div>
+
       <div class="card-action">
-        <%= link_to "Add to Cart", cart_staches_path(stache_id: stache.id), method: :post %>
+        <%= link_to "Add to Cart", cart_staches_path(stache_id: stache.id), method: :post unless stache.retired? %>
       </div>
     </div>
   </div>

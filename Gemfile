@@ -37,7 +37,6 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara'
   gem 'launchy'
-  gem 'shoulda-matchers'
   gem "factory_girl_rails", "~> 4.0"
   gem "database_cleaner"
   gem "mocha"
@@ -49,6 +48,11 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :test do
+  gem 'shoulda', '~> 3.5'
+  gem 'shoulda-matchers', '~> 2.0'
 end
 
 gem 'rails_12factor', group: :production
