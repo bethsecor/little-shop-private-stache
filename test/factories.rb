@@ -5,6 +5,12 @@ FactoryGirl.define do
     sequence(:password) { |n| "password#{n}" }
   end
 
+  factory :admin, class: User do
+    username "admin"
+    password "pass"
+    role 1
+  end
+
   factory :order do
     user
   end
