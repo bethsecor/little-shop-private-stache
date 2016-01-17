@@ -1,10 +1,12 @@
 body {
-  /*background-image: url("vintage.jpg");*/
+  background-image: url("subtle_white_feathers.png");
   background-color: blanchedalmond;
   min-height: 100vh;
 }
 h3 {
-  font-family: 'Architects Daughter', cursive;
+  /*font-family: 'Montserrat', sans-serif;*/
+  /*font-family: 'Unica One', cursive;*/
+  font-family: 'Kameron', serif;
   color: brown;
 }
 
@@ -14,6 +16,11 @@ h3 {
   display: block;
 }
 
+#credentials {
+  padding-left: 150px;
+  padding-top: 10px;
+}
+
 footer {
    position:inherit;
    bottom: 0;
@@ -21,7 +28,7 @@ footer {
    height: 150px;
 }
 footer.page-footer {
-  background-color: #AD7A4E;
+  background-color: #5d4037;
   margin-top: 90px;
   position: inherit;
   max-height: 120px;
@@ -40,6 +47,7 @@ nav {
   text-align: center;
 }
 #logo {
+  margin-top: 9px;
   max-width: 280px;
   width: 100%;
   min-width: 180px;
@@ -50,16 +58,24 @@ nav {
 
 }
 .shoppingcart {
+  margin-left: 9px;
+  margin-top: 9px;
   position: absolute;
 
 }
 .cart_total {
+  margin-left: 9px;
+  margin-top: 9px;
   position: absolute;
   right: 94.6%;
   color: brown;
 }
 .login-logout {
-  padding-right: 5px;
+  text-decoration: underline;
+  font-size: 12px;
+  padding-top: 9px;
+  padding-right: 7%;
+
 }
 .flash_removed {
   color: green;
@@ -79,4 +95,15 @@ nav {
 }
 .checkout-btn {
   float: right;
+}
+
+.category-label {
+  font-family: 'Unica One', cursive;
+  font-size: 2em;
+  color: #33691e;
+}
+
+.status {
+  width: 80%;
+  padding-left: 200px;
 }

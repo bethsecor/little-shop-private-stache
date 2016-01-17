@@ -13,9 +13,9 @@ class CartClearsOnLogoutTest < ActionDispatch::IntegrationTest
     visit staches_path
     click_on "Add to Cart"
 
-    assert page.has_content?("(1)")
+    assert page.has_content?("1")
     click_on "Logout"
 
-    assert page.has_content?("(0)")
+    assert page.has_content?("0")
   end
 end
