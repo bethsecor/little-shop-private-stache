@@ -11,27 +11,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div class="navbar-fixed">
-  <nav>
     <div class="nav-wrapper">
       <% if current_user %>
         <%= link_to("Logout", logout_path, method: :delete, class: "right brown-text login-logout") %>
       <% else %>
         <%= link_to "Login", login_path, id: "Login", class:"right brown-text login-logout"%>
+        <%= link_to("Create Account", new_user_path, class: "right brown-text login-logout") %>
       <% end %>
 
       <div class="cart_box">
-        <a id="View Cart" href="/cart"><i class="material-icons shoppingcart wheat-text">shopping_cart</i></a>
-        <a class="cart_total" href="/cart">(<%= @cart.total_quantity %>)</a>
+        <a id="View Cart" href="/cart"><i class="material-icons shoppingcart black-text">shopping_cart</i></a>
+        <a class="cart_total" href="/cart"><%= @cart.total_quantity %>-</a>
       </div>
 
       <div class="logo-box">
         <a href="/"><img class="responsive-img" src=" <%=random_stache%> " id="logo" /></a>
       </div>
     </div>
-  </nav>
-</div>
+
 <% if current_user %>
   <p id="credentials" class="right brown-text hide-on-small-only">Logged In As: <%= current_user.username %> </p>
 <% end %>
@@ -39,7 +36,7 @@
 <% flash.each do |type, msg| %>
   <%= content_tag :div, sanitize(msg), class: "flash_#{type}" %>
 <% end %>
-<br>
+
 <%= yield %>
 
 <footer class="page-footer saddlebrown">

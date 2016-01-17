@@ -39,6 +39,7 @@ nav {
   text-align: center;
 }
 #logo {
+  margin-top: 9px;
   max-width: 280px;
   width: 100%;
   min-width: 180px;
@@ -49,16 +50,24 @@ nav {
 
 }
 .shoppingcart {
+  margin-left: 9px;
+  margin-top: 9px;
   position: absolute;
 
 }
 .cart_total {
+  margin-left: 9px;
+  margin-top: 9px;
   position: absolute;
   right: 94.6%;
   color: brown;
 }
 .login-logout {
-  padding-right: 5px;
+  text-decoration: underline;
+  font-size: 12px;
+  padding-top: 9px;
+  padding-right: 7%;
+
 }
 .flash_removed {
   color: green;
