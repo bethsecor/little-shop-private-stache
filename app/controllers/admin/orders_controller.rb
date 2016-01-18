@@ -13,4 +13,8 @@ class Admin::OrdersController < ApplicationController
     Order.update(params[:order_id], status: "cancelled")
     redirect_to admin_dashboard_path
   end
+
+  def show
+    @order = Order.find(params[:id])
+  end
 end

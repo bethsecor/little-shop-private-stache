@@ -20,6 +20,23 @@
       </table>
     </div>
     <br>
+  <h5 class="center">Purchaser</h5>
+  <table class="responsive-table">
+    <tbody>
+      <tr>
+        <td>First Name:</td>
+        <td><%= @order.first_name %></td>
+        <td>Address:</td>
+        <td><%= @order.address %></td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td><%= @order.last_name %></td>
+        <td></td>
+        <td><%= @order.city %>, <%= @order.state %> <%= @order.zipcode %></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="center">Details</h5>
   <table class="centered bordered responsive-table">
     <thead>
@@ -32,7 +49,7 @@
 
     <tbody>
       <% @order.staches.each do |stache| %>
-        <tr>
+        <tr id=<%="stache-#{stache.id}"%>>
           <td><%= link_to stache.name, stache_path(stache) %></td>
           <td><%= @order.quantity(stache) %></td>
           <td><%= number_to_currency(@order.subtotal(stache)) %></td>

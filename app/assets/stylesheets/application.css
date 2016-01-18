@@ -9,6 +9,11 @@ h4 {
   color: darkolivegreen;
 }
 
+h5 {
+  font-family: 'Unica One', cursive;
+  color: darkolivegreen;
+}
+
 .preview img {
   max-width: 250px;
   margin: auto;
@@ -103,6 +108,7 @@ nav {
 }
 
 .status {
+  margin:auto;
   width: 80%;
-  padding-left: 200px;
+  /*padding-left: 200px;*/
 }
