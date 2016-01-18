@@ -60,7 +60,8 @@ stache_8 = Stache.new(name: "I'm Bored", description: description,
 stache_8.categories << cat_2
 stache_8.save
 
-#Category 3 Staches
+# Category 3 Staches
+
 stache_9 = Stache.new(name: "Arrrr", description: description, price: 4.0,
                      image_url: "http://i.imgur.com/vctVE2S.png",
                      stache_url: "http://i.imgur.com/ts6Cs7W.png")
