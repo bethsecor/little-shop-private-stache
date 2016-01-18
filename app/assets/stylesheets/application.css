@@ -122,3 +122,14 @@ footer.page-footer {
   display: inherit;
   font-family: 'Unica One';
 }
+/*----SHOW----*/
+.stache-me-box{
+  position: relative;
+}
+.stache-me {
+  z-index: 10;
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+}
