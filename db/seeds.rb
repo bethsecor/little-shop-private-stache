@@ -58,7 +58,7 @@ order_1.order_staches << order_stache_3
 
 user_1.orders << order_1
 
-order_2 = Order.new
+order_2 = Order.new(status: "paid")
 
 order_stache_4 = OrderStache.create(order_id: order_2.id,
                                     stache_id: stache_5.id,
@@ -94,3 +94,5 @@ order_3.order_staches << order_stache_8
 order_3.order_staches << order_stache_9
 
 user_2.orders << order_3
+
+admin = User.create(username: "swanson", password: "stache", role: 1)

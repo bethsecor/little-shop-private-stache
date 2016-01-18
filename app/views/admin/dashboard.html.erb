@@ -1,1 +1,44 @@
-<h3>Admin StacheBoard</h3>
+<div id="admin-orders-table" class="container">
+  <h3>Admin StacheBoard</h3>
+  <table>
+    <thead>
+      <tr>
+          <th data-field="id">Order Number</th>
+          <th data-field="status">
+            <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Status</a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="#!">Ordered</a></li>
+              <li><a href="#!">Paid</a></li>
+              <li><a href="#!">Completed</a></li>
+              <li><a href="#!">Cancelled</a></li>
+            </ul>
+          </th>
+          <th data-field="update-status">Change Status:</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+      <tr id=<%="order-#{order.id}"%>>
+        <td><%= link_to "Order-#{order.id}", admin_order_path(order),
+                id: "order-#{order.id}-link", class: "btn" %></td>
+        <td><%= order.status.capitalize %></td>
+        <td>
+          <% if order.status == "ordered" %>
+            <%= link_to "Cancel", admin_cancel_order_path(order), method: :post,
+                id: "order-#{order.id}-cancel", class: "btn" %>
+            <%= link_to "Mark As Paid", admin_paid_order_path(order_id: order.id), method: :put,
+                id: "order-#{order.id}-paid", class: "btn" %>
+          <% end %>
+          <% if order.status == "paid" %>
+            <%= link_to "Cancel", admin_cancel_order_path(order), method: :post,
+                id: "order-#{order.id}-cancel", class: "btn" %>
+            <%= link_to "Mark As Complete", admin_complete_order_path(order), method: :post,
+                id: "order-#{order.id}-complete", class: "btn" %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

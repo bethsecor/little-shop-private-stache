@@ -1,0 +1,59 @@
+require 'test_helper'
+
+class AdminViewOrdersTest < ActionDispatch::IntegrationTest
+  test "admin sees all orders on the dashboard page" do
+    # As an Admin
+    # When I visit the dashboard
+    # Then I can see a listing of all orders
+    # And I can see the total number of orders for each status ("Ordered", "Paid", "Cancelled", "Completed")
+    # And I can see a link for each individual order
+    # And I can filter orders to display by each status type  ("Ordered", "Paid", "Cancelled", "Completed")
+    # And I have links to transition the status
+    #
+    # I can click on "cancel" on individual orders which are "paid" or "ordered"
+    # I can click on "mark as paid" on orders that are "ordered"
+    # I can click on "mark as completed" on orders that are "paid"
+    create_eight_orders_for_user
+    admin = User.create(username: "admin", password: "pw", role: 1)
+    ApplicationController.any_instance.stubs(:current_user).returns(admin)
+
+    visit admin_dashboard_path
+
+    assert_equal admin_dashboard_path, current_path
+    assert page.has_content?("Admin StacheBoard")
+    within("#admin-orders-table") do
+      Order.all.each do |order|
+        assert page.has_content?(order.id)
+        assert page.has_content?(order.status.capitalize)
+        assert page.has_link?("order-#{order.id}-link")
+
+        if %w(ordered).include?(order.status)
+          assert page.has_link?("order-#{order.id}-paid")
+          assert page.has_link?("order-#{order.id}-cancel")
+        end
+
+        if %w(paid).include?(order.status)
+          assert page.has_link?("order-#{order.id}-complete")
+          assert page.has_link?("order-#{order.id}-cancel")
+        end
+      end
+    end
+  end
+
+  test "admin can change status of ordered order to paid" do
+    create_eight_orders_for_user
+    admin = User.create(username: "admin", password: "pw", role: 1)
+    order = Order.find_by(status: "ordered")
+    ApplicationController.any_instance.stubs(:current_user).returns(admin)
+
+    visit admin_dashboard_path
+    click_on "order-#{order.id}-paid"
+
+    assert_equal current_path, admin_dashboard_path
+    save_and_open_page
+    within("#order-#{order.id}") do
+      assert page.has_content?("Paid")
+      refute page.has_content?("Ordered")
+    end
+  end
+end
