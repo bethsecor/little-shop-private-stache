@@ -104,12 +104,11 @@ class AdminViewOrdersTest < ActionDispatch::IntegrationTest
     create_eight_orders_for_user
     admin = User.create(username: "admin", password: "pw", role: 1)
     order = Order.first
-    byebug
     ApplicationController.any_instance.stubs(:current_user).returns(admin)
 
     visit admin_dashboard_path
     click_on "order-#{order.id}-link"
-    # save_and_open_page
+
     assert admin_order_path(order), current_path
     assert page.has_content?("Order Number: #{order.id}")
     assert page.has_content?("First Name: #{order.first_name}")
@@ -123,8 +122,6 @@ class AdminViewOrdersTest < ActionDispatch::IntegrationTest
       within("#stache-#{stache.id}") do
         assert page.has_link?(stache.name)
         assert page.has_content?("#{order.quantity(stache)}")
-        # assert page.has_content?("$#{order.subtotal(stache)}")
-        # byebug
         assert page.has_content?(number_to_currency(order.subtotal(stache)))
       end
     end

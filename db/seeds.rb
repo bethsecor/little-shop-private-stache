@@ -83,7 +83,9 @@ stache_18 = Stache.create(name: "The Lenny",
                          price: 5000.00,
                          retired: true,
                          image_url: pic)
-order_1 = Order.new
+order_1 = Order.new(first_name: "Leslie", last_name: "Knope",
+                    address: "1510 Blake St.", city: "Denver",
+                    state: "CO", zipcode: "80202")
 
 order_stache_1 = OrderStache.create(order_id: order_1.id,
                                     stache_id: stache_1.id,
@@ -101,7 +103,9 @@ order_1.order_staches << order_stache_3
 
 user_1.orders << order_1
 
-order_2 = Order.new(status: "paid")
+order_2 = Order.new(status: "paid", first_name: "Tom", last_name: "Haverford",
+                    address: "1510 Blake St.", city: "Denver",
+                    state: "CO", zipcode: "80202")
 
 order_stache_4 = OrderStache.create(order_id: order_2.id,
                                     stache_id: stache_5.id,
@@ -120,7 +124,9 @@ order_2.order_staches << order_stache_6
 user_1.orders << order_2
 
 user_2 = User.create(username: "steve", password: "123")
-order_3 = Order.new
+order_3 = Order.new(first_name: "Andy", last_name: "Dwyer",
+                    address: "1510 Blake St.", city: "Denver",
+                    state: "CO", zipcode: "80202")
 
 order_stache_7 = OrderStache.create(order_id: order_3.id,
                                     stache_id: stache_1.id,
