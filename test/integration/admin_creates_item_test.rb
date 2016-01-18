@@ -18,8 +18,10 @@ class AdminCreatesItemTest < ActionDispatch::IntegrationTest
     fill_in "Description", with: "impressive new stache"
     fill_in "Price", with: 12
     fill_in "Image Url", with: "http://i.imgur.com/kMx8J0g.png "
-    find(:css, "#stache_categories_#{category.id}[value='#{category.id}']").set(true)
-    find(:css, "#stache_categories_#{category2.id}[value='#{category2.id}']").set(true)
+    css_cat_1 = "#stache_categories_#{category.id}[value='#{category.id}']"
+    find(:css, css_cat_1).set(true)
+    css_cat_2 = "#stache_categories_#{category2.id}[value='#{category2.id}']"
+    find(:css, css_cat_2).set(true)
 
     click_on "Create New Stache"
     stache = Stache.last
