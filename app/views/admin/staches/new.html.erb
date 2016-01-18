@@ -12,6 +12,9 @@
     <%= f.number_field :price %>
     <%= f.label :price %>
 
+    <%= f.collection_select :retired, [true, false], ["Active", "Retired"] %>
+    <%= f.label :retired "Status" %>
+
     <%= f.text_field :image_url %>
     <%= f.label :image_url, "Image Url" %>
     <br>
