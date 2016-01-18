@@ -3,13 +3,13 @@
   <%= link_to "Create New Stache", new_admin_stache_path, class: "btn light-green darken-4" %>
   <%= link_to "View All Staches", admin_staches_path, class: "btn light-green darken-4" %>
   <div class="container">
-    <h5 class="center">Statuses</h5>
+    <h5 class="center">Order Statuses</h5>
     <%= bar_chart Order.order_status_count, discrete: true,
     colors: ["#33691e"],
     library: { backgroundColor: "transparent",
                hAxis: {title: "Frequency"}} %>
   </div>
-  <h5 class="center">Orders</h5>
+  <h5 class="center">All Orders</h5>
   <a class='dropdown-button btn right light-green darken-3' href='#'
       data-activates='dropdown1'>Filter Order Status</a>
   <ul id='dropdown1' class='dropdown-content'>
