@@ -1,11 +1,10 @@
 body {
   background-image: url("subtle_white_feathers.png");
-  background-color: blanchedalmond;
+  background-color: white;
   min-height: 100vh;
 }
 h4 {
-  /*font-family: 'Montserrat', sans-serif;*/
-  font-family: 'Unica One', cursive;
+  font-family: 'Unica One';
   color: darkolivegreen;
 }
 a {
@@ -36,11 +35,8 @@ footer.page-footer {
   position: inherit;
   max-height: 120px;
 }
-/*----NAV BAR----*/
-nav {
-  background-color: #AD7A4E;
-  color: black;
-}
+/*----NAVIGATION----*/
+
 .left-nav {
   position: fixed;
   width: 40%;
@@ -65,7 +61,7 @@ nav {
 
 }
 .shoppingcart {
-  left: 25px;
+  left: 29px;
   margin-top: 19px;
   position: absolute;
 
@@ -82,12 +78,14 @@ nav {
   font-size: 12px;
   padding-top: 7px;
   padding-right: 15px;
+  font-family: 'Unica One';
 }
 .fixed {
   text-decoration: underline;
   font-size: 12px;
   padding-top: 7px;
   padding-left: 15px;
+  font-family: 'Unica One';
 }
 .flash_removed {
   color: green;
