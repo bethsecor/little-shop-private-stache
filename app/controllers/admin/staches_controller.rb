@@ -16,6 +16,10 @@ module Admin
       end
     end
 
+    def index
+      @staches = Stache.all.includes(:categories)
+    end
+
     private
 
     def stache_params

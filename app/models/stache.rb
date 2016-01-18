@@ -10,6 +10,14 @@ class Stache < ActiveRecord::Base
   validates :categories, presence: true
   after_create :default_image
 
+  def status
+    if retired?
+      "Retired"
+    else
+      "Active"
+    end
+  end
+
   private
 
   def default_image
