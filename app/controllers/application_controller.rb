@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_cart
   before_action :store_location
+  before_action :set_thread
 
   def store_location
     session[:forwarding_url] = request.path if request.get?
@@ -15,6 +16,15 @@ class ApplicationController < ActionController::Base
 
   def set_cart
     @cart = Cart.new(session[:cart])
+  end
+
+  def set_thread
+    User.current_user = User.find(session[:user_id])
+  #   yield 
+  # ensure
+  #   # to address the thread variable leak issues in Puma/Thin webserver
+  #   User.current_user = nil
+
   end
 
   def current_user

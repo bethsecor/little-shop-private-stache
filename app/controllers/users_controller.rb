@@ -21,11 +21,12 @@ class UsersController < ApplicationController
   end
 
   def mustache_me
+    @user = current_user
     @controller = self
   end
 
   def show_stache
-    @photo = HeadshotPhoto.last
+    @photo = current_user.headshot_photos.last
   end
 
   def to_picture

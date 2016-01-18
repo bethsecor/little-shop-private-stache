@@ -8,7 +8,7 @@
   <%= headshot_snap_button('Shoot') %>
 </div>
 
-<button id="myButton" type="submit" name="button" onclick="headshotHandlers.snap(); redirectTo('show_stache');">Take!</button>
+<button class="capture row" id="myButton" type="submit" name="button" onclick="headshotHandlers.snap(); redirectTo('show_stache');">Take!</button>
 
 <script type="text/javascript">
 <!--
@@ -19,6 +19,8 @@ function redirectTo(sUrl) {
   }, 500);
 
 }
+
+
 //-->
 </script>
 
