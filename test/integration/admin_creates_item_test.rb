@@ -6,10 +6,11 @@ class AdminCreatesItemTest < ActionDispatch::IntegrationTest
     ApplicationController.any_instance.stubs(:current_user).returns(admin)
 
     visit admin_dashboard_path
+    save_and_open_page
     click_on "Create New Stache"
 
     assert_equal new_admin_stache_path, current_path
 
-  
+
   end
 end

@@ -27,9 +27,9 @@ class OrderTest < ActiveSupport::TestCase
 
   test "order total" do
     order = Order.create
-    stache_1 = Stache.create(price: 5.0)
-    stache_2 = Stache.create(price: 3.0)
-    stache_3 = Stache.create(price: 4.0)
+    stache_1 = create(:stache, price: 5.0)
+    stache_2 = create(:stache, price: 3.0)
+    stache_3 = create(:stache, price: 4.0)
     order_stache_1 = OrderStache.create(order_id: order.id,
                                         stache_id: stache_1.id,
                                         quantity: 2)

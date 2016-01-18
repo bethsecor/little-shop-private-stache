@@ -20,6 +20,12 @@ FactoryGirl.define do
     description
     price
     image_url "http://img.cdn.likes.com/img/fe8ea231575e2a180ad1d5a95822ef45.600x.jpg"
+    ignore do
+      categories_count 1
+      before(:create) do |stache, evaluator|
+        create_list(:category, evaluator.categories_count, staches: [stache])
+      end
+    end
   end
 
   sequence :name, %w(A B C D E).cycle do |n|
