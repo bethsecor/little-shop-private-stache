@@ -3,25 +3,29 @@
 
     <%= render "shared/error_messages", object: f.object %>
 
-    <%= f.label :name %>
     <%= f.text_field :name %>
+    <%= f.label :name %>
 
-    <%= f.label :description %>
     <%= f.text_field :description %>
+    <%= f.label :description %>
 
-    <%= f.label :price %>
     <%= f.number_field :price %>
+    <%= f.label :price %>
 
-    <%= f.label :image_url, "Image Url" %>
     <%= f.text_field :image_url %>
-    <%= f.label :categories %>
+    <%= f.label :image_url, "Image Url" %>
     <br>
+    <br>
+
     <%= f.collection_check_boxes :categories, Category.all, :id, :title, include_hidden: false do |b| %>
      <div class="categories-checkboxes">
        <%= b.check_box %>
        <%= b.label %>
      </div>
       <% end %>
+    <%= f.label :categories %>
+    <br>
+    <br>
     <%= f.submit "Create New Stache" %>
   <% end %>
 </div>
