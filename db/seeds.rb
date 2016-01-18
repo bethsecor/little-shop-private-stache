@@ -95,4 +95,4 @@ order_3.order_staches << order_stache_9
 
 user_2.orders << order_3
 
-admin = User.create(username: "swanson", password: "stache", role: 1)
+User.create(username: "swanson", password: "stache", role: 1)

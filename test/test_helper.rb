@@ -31,12 +31,12 @@ module ActionDispatch
 
       orders.each do |order|
         staches.each do |stache|
-          order.order_staches.create(stache_id: stache.id, quantity: quantities.sample)
+          order.order_staches.create(stache_id: stache.id,
+                                     quantity: quantities.sample)
         end
       end
 
       user.orders << orders
-
     end
   end
 end
