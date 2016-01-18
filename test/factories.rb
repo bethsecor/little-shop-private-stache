@@ -24,18 +24,6 @@ FactoryGirl.define do
       |stache| stache.categories << create(:category)
     end
   end
-  # factory :stache do
-  #   name
-  #   description
-  #   price
-  #   image_url "http://img.cdn.likes.com/img/fe8ea231575e2a180ad1d5a95822ef45.600x.jpg"
-  #   transient do
-  #     categories_count 2
-  #     before(:build) do |stache, evaluator|
-  #       create_list(:categories, evaluator.categories_count, staches: [stache])
-  #     end
-  #   end
-  # end
 
   sequence :name, %w(A B C D E).cycle do |n|
     "#{n} mustache"
@@ -50,10 +38,6 @@ FactoryGirl.define do
   end
 
   factory :category do
-    title
-  end
-
-  factory :categories do
     title
   end
 
