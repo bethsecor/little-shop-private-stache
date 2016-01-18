@@ -36,6 +36,11 @@ class Order < ActiveRecord::Base
   end
 
   def self.order_status_count
-    group(:status).count.map { |status, count| [status.capitalize, count] }
+    status_freq = group(:status).count
+    status_freq["ordered"] ||= 0
+    status_freq["paid"] ||= 0
+    status_freq["completed"] ||= 0
+    status_freq["cancelled"] ||= 0
+    status_freq.map { |status, count| [status.capitalize, count] }
   end
 end
