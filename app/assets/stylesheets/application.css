@@ -106,3 +106,7 @@ nav {
   width: 80%;
   padding-left: 200px;
 }
+/*----INDEX----*/
+.card-title {
+  display: inherit;
+}
