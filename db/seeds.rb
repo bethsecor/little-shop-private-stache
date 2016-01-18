@@ -173,3 +173,5 @@ order_3.order_staches << order_stache_8
 order_3.order_staches << order_stache_9
 
 user_2.orders << order_3
+
+User.create(username: "swanson", password: "123", role: 1)
