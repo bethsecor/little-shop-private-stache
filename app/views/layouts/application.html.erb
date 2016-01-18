@@ -12,6 +12,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="container" >
   <div class="nav-wrapper">
     <div class="right-nav">
       <% if current_user %>
@@ -48,6 +49,10 @@
 
 <%= yield %>
 
+  <div id="push"></div>
+</div>
+
+<div id="footer">
 <footer class="page-footer saddlebrown">
   <div class="container">
     <div class="row">
@@ -65,6 +70,7 @@
     </div>
   </div>
 </footer>
+</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
