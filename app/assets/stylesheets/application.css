@@ -8,7 +8,9 @@ h4 {
   font-family: 'Unica One', cursive;
   color: darkolivegreen;
 }
-
+a {
+  color: forestgreen;
+}
 .preview img {
   max-width: 250px;
   margin: auto;
@@ -16,8 +18,10 @@ h4 {
 }
 
 #credentials {
-  padding-left: 150px;
-  padding-top: 10px;
+  padding-top: 28px;
+  position: absolute;
+  right: 9px;
+  font-family: 'Unica One';
 }
 
 footer {
@@ -36,6 +40,10 @@ footer.page-footer {
 nav {
   background-color: #AD7A4E;
   color: black;
+}
+.left-nav {
+  position: fixed;
+  width: 40%;
 }
 .logo-box {
   display: block;
@@ -57,14 +65,14 @@ nav {
 
 }
 .shoppingcart {
-  margin-left: 9px;
-  margin-top: 9px;
+  left: 25px;
+  margin-top: 19px;
   position: absolute;
 
 }
 .cart_total {
-  margin-left: 9px;
-  margin-top: 9px;
+  left: 9px;
+  margin-top: 19px;
   position: absolute;
   right: 94.6%;
   color: brown;
@@ -72,9 +80,14 @@ nav {
 .login-logout {
   text-decoration: underline;
   font-size: 12px;
-  padding-top: 9px;
-  padding-right: 7%;
-
+  padding-top: 7px;
+  padding-right: 15px;
+}
+.fixed {
+  text-decoration: underline;
+  font-size: 12px;
+  padding-top: 7px;
+  padding-left: 15px;
 }
 .flash_removed {
   color: green;
@@ -105,4 +118,9 @@ nav {
 .status {
   width: 80%;
   padding-left: 200px;
+}
+/*----INDEX----*/
+.card-title {
+  display: inherit;
+  font-family: 'Unica One';
 }
