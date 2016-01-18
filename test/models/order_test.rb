@@ -27,6 +27,7 @@ class OrderTest < ActiveSupport::TestCase
 
   test "order total" do
     order = Order.create
+    # byebug
     stache_1 = create(:stache, price: 5.0)
     stache_2 = create(:stache, price: 3.0)
     stache_3 = create(:stache, price: 4.0)
