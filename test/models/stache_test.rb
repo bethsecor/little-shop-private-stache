@@ -13,4 +13,12 @@ class StacheTest < ActiveSupport::TestCase
     default_image = "http://i.imgur.com/kMx8J0g.png"
     assert_equal default_image, stache.image_url
   end
+
+  test "it returns corrrect status" do
+    stache1 = create(:stache, retired: true)
+    stache2 = create(:stache, retired: false)
+
+    assert_equal "Retired", stache1.status
+    assert_equal "Active", stache2.status
+  end
 end
