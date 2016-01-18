@@ -35,12 +35,19 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def ordered?
+    status == "ordered"
+  end
+
+  def paid?
+    status == "paid"
+  end
+
   def self.order_status_count
     status_freq = group(:status).count
-    status_freq["ordered"] ||= 0
-    status_freq["paid"] ||= 0
-    status_freq["completed"] ||= 0
-    status_freq["cancelled"] ||= 0
+    %w(ordered paid completed cancelled).each do |status|
+      status_freq[status] ||= 0
+    end
     status_freq.map { |status, count| [status.capitalize, count] }
   end
 end

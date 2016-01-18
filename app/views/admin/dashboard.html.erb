@@ -32,14 +32,14 @@
                 id: "order-#{order.id}-link", class: "btn" %></td>
         <td><%= order.status.capitalize %></td>
         <td>
-          <% if order.status == "ordered" %>
+          <% if order.ordered? %>
             <%= link_to "Cancel", admin_cancel_order_path(order_id: order.id),
                 method: :put, id: "order-#{order.id}-cancel", class: "btn" %>
             <%= link_to "Mark As Paid",
                 admin_paid_order_path(order_id: order.id), method: :put,
                 id: "order-#{order.id}-paid", class: "btn" %>
           <% end %>
-          <% if order.status == "paid" %>
+          <% if order.paid? %>
             <%= link_to "Cancel", admin_cancel_order_path(order_id: order.id),
                 method: :put, id: "order-#{order.id}-cancel", class: "btn" %>
             <%= link_to "Mark As Complete",
