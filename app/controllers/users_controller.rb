@@ -21,12 +21,15 @@ class UsersController < ApplicationController
   end
 
   def mustache_me
-
+    @controller = self
   end
 
   def show_stache
-    sleep(1.5)
     @photo = HeadshotPhoto.last
+  end
+
+  def to_picture
+    redirect_to "/show_stache"
   end
 
   private
