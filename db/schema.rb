@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117195944) do
+ActiveRecord::Schema.define(version: 20160118175358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160117195944) do
     t.string   "image_url"
     t.boolean  "retired",                             default: false
     t.decimal  "price",       precision: 8, scale: 2
+    t.string   "stache_url"
   end
 
   create_table "users", force: :cascade do |t|
