@@ -34,4 +34,8 @@ class Order < ActiveRecord::Base
       order_staches.create(stache_id: stache_id, quantity: quantity)
     end
   end
+
+  def self.order_status_count
+    group(:status).count.map { |status, count| [status.capitalize, count] }
+  end
 end

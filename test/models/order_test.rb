@@ -55,4 +55,13 @@ class OrderTest < ActiveSupport::TestCase
 
     assert_equal 3, order.create_order_staches(cart).count
   end
+
+  test "order status count" do
+    order = Order.create(status: "ordered")
+    order = Order.create(status: "paid")
+    order = Order.create(status: "paid")
+    order = Order.create(status: "completed")
+
+    assert_equal 3, order.create_order_staches(cart).count
+  end
 end

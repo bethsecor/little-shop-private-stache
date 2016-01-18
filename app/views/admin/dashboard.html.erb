@@ -1,5 +1,13 @@
+
 <div id="admin-orders-table" class="container">
-  <h3>Admin StacheBoard</h3>
+  <h4>Admin StacheBoard</h4>
+  <div class="container">
+    <%= bar_chart @orders.order_status_count, discrete: true,
+    colors: ["darkolivegreen"],
+    library: { backgroundColor: "transparent",
+               hAxis: {title: "Frequency"},
+               title: "Statuses" } %>
+  </div>
   <table>
     <thead>
       <tr>
