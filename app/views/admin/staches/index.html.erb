@@ -17,7 +17,7 @@
     <div id="stache-<%= stache.id %>">
       <tr>
         <td><%= image_tag(stache.image_url, size: "16x10")  %></td>
-        <td><%= link_to stache.name, stache %></td>
+        <td><%= link_to stache.name, stache, class: "btn" %></td>
         <td><%= stache.description %></td>
         <td>$<%= stache.price %></td>
         <td><%= stache.status %></td>
