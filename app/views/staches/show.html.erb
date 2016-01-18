@@ -4,6 +4,12 @@
       <div class="card-content brown-text">
         <span class="card-title"><%= @stache.name %></span>
         <p><%= @stache.description %></p>
+        <% unless @stache.categories.empty? %>
+        Categories:
+           <% @stache.categories.each do |category| %>
+             <%= link_to category.title, category %>
+           <% end %>
+        <% end %>
       </div>
       <div class="card-action">
         <p><%= number_to_currency(@stache.price) %></p>
@@ -29,5 +35,4 @@
       </div>
     </div>
   </div>
-
 </div>
