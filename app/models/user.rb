@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
  end
 
  def self.current_user=(usr)
-   Thread.current[:current_user] = usr
+   Thread.current[:current_user] ||= usr
  end
 end
