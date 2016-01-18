@@ -14,7 +14,7 @@ class VisitorCanViewByCategory < ActionDispatch::IntegrationTest
     assert page.has_content?("#{category_2.title}")
     assert page.has_content?("#{category_3.title}")
 
-    click_on "A category"
+    click_on category_1.title
 
     assert_equal category_path(category_1), current_path
     assert page.has_content?("#{stache_1.name}")
