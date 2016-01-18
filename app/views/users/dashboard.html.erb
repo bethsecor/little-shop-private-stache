@@ -1,6 +1,9 @@
 <div class="container">
-  <h1>User Dashboard</h1>
+  <h4>Your StacheBoard</h4>
   <p>
-    Welcome <%= @user.username %>
+    Welcome <%= @user.username %>!
   </p>
+  <%= link_to "Order History", orders_path, class: "btn" %>
+
+  <%= link_to "Edit Account Info", edit_user_path(@user), class: "btn" %>
 </div>

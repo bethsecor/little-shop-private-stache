@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   helper :headshot
+  before_action :current_user_guard, only: [:edit]
 
   def new
     @user = User.new
@@ -29,8 +30,14 @@ class UsersController < ApplicationController
     @photo = current_user.headshot_photos.last
   end
 
-  def to_picture
-    redirect_to "/show_stache"
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    @user.update(user_params)
+    redirect_to dashboard_path
   end
 
   private

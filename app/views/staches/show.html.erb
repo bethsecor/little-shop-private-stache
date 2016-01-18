@@ -1,29 +1,33 @@
 <div class="row">
-  <div class="col s12 m7">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= @stache.image_url %>">
+  <div class="col s12 m4">
+    <div class="card white darken-1">
+      <div class="card-content brown-text">
         <span class="card-title"><%= @stache.name %></span>
-      </div>
-      <div class="card-content">
-        <p><%= @stache.name %></p>
+        <p><%= @stache.description %></p>
       </div>
       <div class="card-action">
-        <%= link_to "See all staches", staches_path %>
-        <%= link_to "Stache categories", root_path %>
+        <p><%= number_to_currency(@stache.price) %></p>
+        <%= link_to("Add to Cart", cart_staches_path(stache_id: @stache.id),
+        method: :post) unless @stache.retired? %>
       </div>
     </div>
   </div>
 
-   <div class="col s12 m4">
-     <div class="card white darken-1">
-       <div class="card-content brown-text">
-         <span class="card-title"><%= @stache.name %></span>
-         <p><%= @stache.description %></p>
-       </div>
-       <div class="card-action">
-         <%= link_to "Add to Cart", cart_staches_path(stache_id: @stache.id), method: :post %>
-       </div>
-     </div>
-   </div>
- </div>
+  <div class="col s12 m4">
+    <div class="preview">
+      <div class="card-image">
+        <img src="<%= @stache.image_url %>">
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m4 stache-me-box">
+    <div class="preview">
+      <div class="card-image">
+        <img class="stache-me" src="<%= @stache.stache_url %>">
+        <img src="http://i.imgur.com/Y4xkIUj.png">
+      </div>
+    </div>
+  </div>
+
+</div>

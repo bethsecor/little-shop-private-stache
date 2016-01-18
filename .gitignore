@@ -12,4 +12,9 @@
 !/log/.keep
 /tmp
 .byebug_history
+<<<<<<< HEAD
 /public/headshots
+
+
+coverage
+
