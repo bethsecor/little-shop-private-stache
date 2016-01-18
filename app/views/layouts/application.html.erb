@@ -13,28 +13,30 @@
 </head>
 <body>
     <div class="nav-wrapper">
-      <% if current_user %>
-      <%= link_to "Logout", logout_path, method: :delete, class: "right brown-text login-logout" %>
-      <%= link_to "Orders", orders_path, class:"right brown-text login-logout" %>
-      <%= link_to "Account", dashboard_path, class:"right brown-text login-logout" %>
-      <% else %>
-        <%= link_to "Login", login_path, id: "Login", class:"right brown-text login-logout" %>
-        <% unless request.path == new_user_path || request.path == login_path %>
-          <%= link_to "Create Account", new_user_path, class: "right brown-text login-logout" %>
-          <% end %>
-      <% end %>
-      <%= link_to "Categories", categories_path, class:"right brown-text login-logout" %>
-      <%= link_to "Staches", staches_path, class:"right brown-text login-logout" %>
+      <div class="right-nav">
+        <% if current_user %>
+          <%= link_to "Logout", logout_path, method: :delete, class: "right brown-text login-logout" %>
+          <%= link_to "Orders", orders_path, class:"right brown-text login-logout" %>
+          <%= link_to "Account", dashboard_path, class:"right brown-text login-logout" %>
+        <% else %>
+          <%= link_to "Login", login_path, id: "Login", class:"right brown-text login-logout" %>
+          <% unless request.path == new_user_path || request.path == login_path %>
+            <%= link_to "Create Account", new_user_path, class: "right brown-text login-logout" %>
+            <% end %>
+        <% end %>
+        <% if current_user %>
+        <div id="credentials" class="brown-text hide-on-small-only">Logged In As: <%= current_user.username %> </div>
+        <% end %>
+      </div>
+
       <div class="left-nav">
+        <%= link_to "Categories", categories_path, class:"brown-text fixed" %>
+        <%= link_to "Staches", staches_path, class:"brown-text fixed" %>
         <div class="cart_box">
           <a id="View Cart" href="/cart"><i class="material-icons shoppingcart black-text">shopping_cart</i></a>
           <a class="cart_total" href="/cart">(<%= @cart.total_quantity %>)</a>
         </div>
 
-
-          <% if current_user %>
-          <div id="credentials" class="brown-text hide-on-small-only">Logged In As: <%= current_user.username %> </div>
-          <% end %>
       </div>
 
       <div class="logo-box">
