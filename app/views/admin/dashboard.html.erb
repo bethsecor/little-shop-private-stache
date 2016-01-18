@@ -8,19 +8,20 @@
                hAxis: {title: "Frequency"},
                title: "Statuses" } %>
   </div>
+
+  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Filter Status</a>
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">Ordered</a></li>
+    <li><a href="#!">Paid</a></li>
+    <li><a href="#!">Completed</a></li>
+    <li><a href="#!">Cancelled</a></li>
+  </ul>
+
   <table>
     <thead>
       <tr>
           <th data-field="id">Order Number</th>
-          <th data-field="status">
-            <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Status</a>
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="#!">Ordered</a></li>
-              <li><a href="#!">Paid</a></li>
-              <li><a href="#!">Completed</a></li>
-              <li><a href="#!">Cancelled</a></li>
-            </ul>
-          </th>
+          <th data-field="status">Status</th>
           <th data-field="update-status">Change Status:</th>
       </tr>
     </thead>
