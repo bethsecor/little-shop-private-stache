@@ -29,7 +29,7 @@ a {
 
 #credentials {
   padding-top: 28px;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   right: 9px;
   font-family: 'Unica One';
@@ -85,7 +85,6 @@ footer.page-footer {
   right: 94.6%;
   color: brown;
 }
-
 .collection .collection-item.avatar .secondary-content {
   color: black;
   top: 5px;
@@ -93,6 +92,14 @@ footer.page-footer {
 .remove {
   position: absolute;
   bottom: 12px;
+}
+.line{
+  display: block;
+  height: 3px;
+  border: 0;
+  border-top: 4px solid white;
+  margin: .5em 0;
+  padding: 0;
 }
 .login-logout {
   text-decoration: underline;

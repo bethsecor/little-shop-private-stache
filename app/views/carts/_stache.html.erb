@@ -4,7 +4,8 @@
   <div class="">
     <p><%= stache.description %></p>
   </div>
-  <p class="secondary-content right-align">Stache Price: <%= number_to_currency(stache.price) %><br>
+  <p class="secondary-content right-align">Stache Price:
+    <%= number_to_currency(stache.price) %><br>
     <%= form_for(:stache_in_cart, url: 'update_quantity') do |f| %>
 
     <div class="cart_data">
@@ -13,10 +14,12 @@
         <%= f.number_field :quantity, value: @cart.contents[stache.id.to_s] %>
       </div>
         <%= f.hidden_field :stache_id, value: stache.id %>
-        <%= f.submit "Update", class: "btn" %>
+        <%= f.submit "Update", class: "btn brown" %>
     </div>
     <% end %>
-
-  <%= link_to "Remove From Cart", cart_stache_path(stache.id), method: :delete, class: "btn remove" %>
+  <i class="material-icons brown-text">delete</i>
+  <%= link_to "Remove", cart_stache_path(stache.id), method: :delete,
+      class: "btn remove brown" %>
   </p>
 </li>
+<div class="line"></div>
