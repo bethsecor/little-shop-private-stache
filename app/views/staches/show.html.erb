@@ -1,3 +1,5 @@
+<%= headshot_default_config(Rails.application.config.session_options[:key], headshot_capture_path) %>
+
 <div class="row">
   <div class="col s12 m4">
     <div class="card white darken-1">
@@ -30,9 +32,27 @@
   <div class="col s12 m4 stache-me-box">
     <div class="preview">
       <div class="card-image">
+        <div id="hideaway" style="display:none;">
         <img class="stache-me" src="<%= @stache.stache_url %>">
-        <img src="http://i.imgur.com/Y4xkIUj.png">
+        </div>
+        <div class="camera center-align row responsive-video">
+          <%= headshot_camera(width = 400, height = 300) %>
+        </div>
+      </div>
+      <div class="card-action">
+        <a href="javascript:;" onClick="document.getElementById('hideaway').style.display='block';">Show Stache</a>
+        <button class="capture row" id="myButton" type="submit" name="button" onclick="headshotHandlers.snap(); redirectTo('show_stache');">Take!</button>
+        <br>
+        <a href="javascript:;" onClick="document.getElementById('hideaway').style.display='none';">Hide Stache</a>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function redirectTo(sUrl) {
+    setTimeout (function () {
+      window.location = sUrl
+    }, 500);
+  }
+</script>

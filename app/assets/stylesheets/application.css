@@ -152,11 +152,8 @@ footer.page-footer {
 }
 
 /*Mustache Me*/
-.camera_element {
-  /*width: 500px;*/
-  display: block;
-  /*margin-left: auto;
-  margin-right: auto;*/
+.camera {
+  right: 40%;
 }
 
 .image {
