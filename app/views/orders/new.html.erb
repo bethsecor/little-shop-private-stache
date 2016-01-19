@@ -1,23 +1,24 @@
 <div class="container">
   <%= form_for @order do |f| %>
+  <%= f.text_field :first_name %>
     <%= f.label :first_name, "First Name" %>
-    <%= f.text_field :first_name %>
 
-    <%= f.label :last_name, "Last Name" %>
     <%= f.text_field :last_name %>
+    <%= f.label :last_name, "Last Name" %>
 
-    <%= f.label :address %>
     <%= f.text_field :address %>
+    <%= f.label :address %>
 
-    <%= f.label :city %>
     <%= f.text_field :city %>
+    <%= f.label :city %>
 
-    <%= f.label :state %>
     <%= f.text_field :state %>
+    <%= f.label :state %>
 
-    <%= f.label :zipcode %>
     <%= f.text_field :zipcode %>
-    
-    <%= f.submit "Submit Order" %>
+    <%= f.label :zipcode %>
+    <br>
+    <br>
+    <%= f.submit "Submit Order", class: "btn light-green darken-4" %>
   <% end %>
 </div>
