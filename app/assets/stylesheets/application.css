@@ -154,6 +154,14 @@ footer.page-footer {
   left: 41%;
 }
 
+.stache-pic {
+  z-index: 10;
+  width: 60%;
+  position: absolute;
+  top: 42%;
+  left: 41%;
+}
+
 .cam-buttons {
   padding-top: 10px;
 }
@@ -167,7 +175,8 @@ footer.page-footer {
 }
 
 img.user_image {
-    max-width: 600px;
+  top: 10%;
+    max-width: 700px;
     border-style: solid;
     border-width: 10px;
     border-radius: 5%;

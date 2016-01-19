@@ -21,15 +21,6 @@ class UsersController < ApplicationController
     render :dashboard
   end
 
-  def mustache_me
-    @user = current_user
-    @controller = self
-  end
-
-  def show_stache
-    @photo = current_user.headshot_photos.last
-  end
-
   def edit
     @user = current_user
   end

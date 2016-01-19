@@ -20,11 +20,6 @@ class ApplicationController < ActionController::Base
 
   def set_thread
     User.current_user = User.find(session[:user_id]) if session[:user_id]
-  #   yield
-  # ensure
-  #   # to address the thread variable leak issues in Puma/Thin webserver
-  #   User.current_user = nil
-
   end
 
   def current_user
