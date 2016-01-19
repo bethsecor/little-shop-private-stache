@@ -1,6 +1,6 @@
 <div class="container">
 <h4>You are the Stache Master</h4>
-<%= link_to "Add New Stache", new_admin_stache_path %>
+<%= link_to "Add New Stache", new_admin_stache_path, class: "btn light-green darken-4" %>
 <table>
   <thead>
     <tr>
@@ -24,7 +24,10 @@
         <td><%= stache.status %></td>
         <td>
           <%= link_to "Edit", edit_admin_stache_path(stache) %>
-          <%= link_to "Delete", admin_stache_path(stache), method: :delete %>
+          <%= link_to "Retire", admin_retire_stache_path(stache_id: stache.id), method: :put,
+                      id: "stache-#{stache.id}-retire" unless stache.retired? %>
+          <%= link_to "Activate", admin_activate_stache_path(stache_id: stache.id), method: :put,
+                      id: "stache-#{stache.id}-activate" if stache.retired? %>
         </td>
       </tr>
     </div>
