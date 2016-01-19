@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
     @order_placement = OrderPlacement.new(@order, @cart.contents)
     if @order_placement.create
       flash[:order_notice] = "Order was successfully placed."
+      session[:cart] = {}
       redirect_to order_path(@order)
     else
       redirect_to new_order_path
