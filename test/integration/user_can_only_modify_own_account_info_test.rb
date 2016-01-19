@@ -14,6 +14,10 @@ class UserCanOnlyModifyOwnAccountInfoTest < ActionDispatch::IntegrationTest
     assert_equal dashboard_path, current_path
 
     click_on "Edit Account Info"
+    fill_in "Username", with: ""
+    click_on "Update Account"
+
+    assert page.has_content?("Username can't be blank")
 
     fill_in "Username", with: "updated_username"
     fill_in "Password", with: "new_password"
