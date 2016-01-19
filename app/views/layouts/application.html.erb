@@ -46,7 +46,7 @@
   </div>
 
 <% flash.each do |type, msg| %>
-  <%= content_tag :div, sanitize(msg), class: "flash_#{type}" %>
+  <%= content_tag :div, sanitize(msg), class: "flash_#{type} flash" %>
 <% end %>
 
 <%= yield %>
