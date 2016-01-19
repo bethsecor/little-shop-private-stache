@@ -4,12 +4,12 @@ class UserViewsPastOrderTest < ActionDispatch::IntegrationTest
   test "user with two orders can view a past order" do
     user = create(:user)
     stache_1, stache_2 = create_list(:stache, 2)
-    stache_3 = Stache.create(name: "Dali",
-                             description: "things",
-                             price: 10.0,
-                             retired: true,
-                             image_url: "http://images.clipartpanda.com/\
-                                         mustache-clipart-ecMA4abcn.svg")
+    stache_3 = create(:stache, name: "Dali",
+                               description: "things",
+                               price: 10.0,
+                               retired: true,
+                               image_url: "http://images.clipartpanda.com/\
+                                           mustache-clipart-ecMA4abcn.svg")
     order = create(:order)
 
     order_stache_1 = OrderStache.create(order_id: order.id,

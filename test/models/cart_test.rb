@@ -29,18 +29,18 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "returns total number of all mustaches in cart" do
-    stache_1 = Stache.create(name: "Handlebar", price: 5.0)
-    stache_2 = Stache.create(name: "Chevron", price: 3.0)
-    stache_3 = Stache.create(name: "Dali", price: 10.0)
+    stache_1 = create(:stache, name: "Handlebar", price: 5.0)
+    stache_2 = create(:stache, name: "Chevron", price: 3.0)
+    stache_3 = create(:stache, name: "Dali", price: 10.0)
     cart = Cart.new(stache_1.id => 2, stache_2.id => 3, stache_3.id => 1)
 
     assert_equal 29.0, cart.total_cost
   end
 
   test "staches finds all staches in cart" do
-    stache_1 = Stache.create(name: "Handlebar", price: 5.0)
-    stache_2 = Stache.create(name: "Chevron", price: 3.0)
-    stache_3 = Stache.create(name: "Dali", price: 10.0)
+    stache_1 = create(:stache, name: "Handlebar", price: 5.0)
+    stache_2 = create(:stache, name: "Chevron", price: 3.0)
+    stache_3 = create(:stache, name: "Dali", price: 10.0)
     cart = Cart.new(stache_1.id => 2, stache_2.id => 3, stache_3.id => 1)
 
     assert_equal [stache_1, stache_2, stache_3], cart.staches

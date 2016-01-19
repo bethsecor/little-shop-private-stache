@@ -1,13 +1,9 @@
 <div class="container">
   <h3>Create a New Account</h3>
   <%= form_for(@user) do |f| %>
-    <% if @user.errors.any? %>
-      <p><%= pluralize(@user.errors.count, "error") %>
-      prohibited this record from being saved:</p>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    <% end %>
+
+    <%= render "shared/error_messages", object: f.object %>
+
     <%= f.label :username %>
     <%= f.text_field :username  %>
     <br>

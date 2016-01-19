@@ -34,4 +34,20 @@ class Order < ActiveRecord::Base
       order_staches.create(stache_id: stache_id, quantity: quantity)
     end
   end
+
+  def ordered?
+    status == "ordered"
+  end
+
+  def paid?
+    status == "paid"
+  end
+
+  def self.order_status_count
+    status_freq = group(:status).count
+    %w(ordered paid completed cancelled).each do |status|
+      status_freq[status] ||= 0
+    end
+    status_freq.map { |status, count| [status.capitalize, count] }
+  end
 end
