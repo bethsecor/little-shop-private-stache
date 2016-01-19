@@ -25,7 +25,9 @@
         <td>
           <%= link_to "Edit", edit_admin_stache_path(stache) %>
           <%= link_to "Retire", admin_retire_stache_path(stache_id: stache.id), method: :put,
-                      id: "stache-#{stache.id}-retire" %>
+                      id: "stache-#{stache.id}-retire" unless stache.retired? %>
+          <%= link_to "Activate", admin_activate_stache_path(stache_id: stache.id), method: :put,
+                      id: "stache-#{stache.id}-activate" if stache.retired? %>
         </td>
       </tr>
     </div>
