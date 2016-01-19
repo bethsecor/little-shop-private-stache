@@ -85,6 +85,15 @@ footer.page-footer {
   right: 94.6%;
   color: brown;
 }
+
+.collection .collection-item.avatar .secondary-content {
+  color: black;
+  top: 5px;
+}
+.remove {
+  position: absolute;
+  bottom: 12px;
+}
 .login-logout {
   text-decoration: underline;
   font-size: 12px;
@@ -108,8 +117,9 @@ footer.page-footer {
   width: 50px;
 }
 .cart_data {
-  margin-left: 90%;
   width: 200px;
+  position: relative;
+  left: 80%;
 }
 .collection {
   margin-left: auto;
@@ -117,6 +127,10 @@ footer.page-footer {
 }
 .checkout-btn {
   float: right;
+}
+.quantity {
+  text-align: right;
+  padding-right: 12%;
 }
 
 .category-label {
