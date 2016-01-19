@@ -1,12 +1,32 @@
 <div class= "container">
-  <h3>Order Number: <%= @order.id %></h1>
-
+  <h4>Order Number: <%= @order.id %></h4>
+    <div class="status">
+      <h5 class="center">Status</h5>
+      <table class="responsive-table">
+        <tbody>
+          <tr>
+            <td>Order Status:</td>
+            <td><%= @order.status.capitalize %></td>
+            <td>Order Complete:</td>
+            <td><%= @order.completed? %></td>
+          </tr>
+          <tr>
+            <td>Order Placed:</td>
+            <td><%= @order.formatted_created_date %></td>
+            <td>Order Last Updated:</td>
+            <td><%= @order.formatted_updated_date %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+  <h5 class="center">Details</h5>
   <table class="centered bordered responsive-table">
     <thead>
       <tr>
           <th data-field="name">Stache</th>
           <th data-field="quantity">Quantity</th>
-          <th data-field="subtotal">Subtotal</th>
+          <th data-field="subtotal">Total Price</th>
       </tr>
     </thead>
 
@@ -25,28 +45,4 @@
       </tr>
     </tbody>
   </table>
-
-<div class="status">
-  <h5>Status:</h5>
-  <table class="responsive-table">
-    <tbody>
-      <tr>
-        <td>Order Status:</td>
-        <td><%= @order.status.capitalize %></td>
-      </tr>
-      <tr>
-        <td>Order Placed:</td>
-        <td><%= @order.formatted_created_date %></td>
-      </tr>
-      <tr>
-        <td>Order Complete:</td>
-        <td><%= @order.completed? %></td>
-      </tr>
-      <tr>
-        <td>Order Last Updated:</td>
-        <td><%= @order.formatted_updated_date %></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 </div>

@@ -13,6 +13,13 @@ FactoryGirl.define do
 
   factory :order do
     user
+    status
+    first_name
+    last_name
+    address
+    city
+    state
+    zipcode
   end
 
   factory :stache do
@@ -41,5 +48,33 @@ FactoryGirl.define do
 
   sequence :title, %w(A B C D).cycle do |n|
     "#{n} category"
+  end
+
+  sequence :first_name, %w(A B C D).cycle do |n|
+    "Bob#{n}"
+  end
+
+  sequence :last_name, %w(A B C D).cycle do |n|
+    "Smith#{n}"
+  end
+
+  sequence :address, (1..4).to_a.cycle do |n|
+    "#{n} Stache Road"
+  end
+
+  sequence :city, %w(A B C D).to_a.cycle do |n|
+    "City#{n}"
+  end
+
+  sequence :state, %w(A B C D).to_a.cycle do |n|
+    "Z#{n}"
+  end
+
+  sequence :zipcode, (1..4).to_a.to_a.cycle do |n|
+    "8011#{n}"
+  end
+
+  sequence :status, %w(ordered paid cancelled completed).to_a.to_a.cycle do |n|
+    "#{n}"
   end
 end
