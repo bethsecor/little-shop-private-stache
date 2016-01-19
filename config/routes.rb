@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     get "/dashboard", to: "dashboard#show"
-    resources :staches, only: [:new, :create, :index, :edit, :destroy]
+    resources :staches, only: [:new, :create, :index, :edit, :destroy, :update]
   end
   resources :cart_staches, only: [:create, :destroy]
   resource :cart, only: [:show]
