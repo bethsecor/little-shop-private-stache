@@ -143,17 +143,19 @@ footer.page-footer {
 .stache-me-box{
   position: relative;
 }
+
+
+/*Mustache Me*/
 .stache-me {
   z-index: 10;
   width: 60%;
   position: absolute;
-  top: 50%;
-  left: 20%;
+  top: 42%;
+  left: 41%;
 }
 
-/*Mustache Me*/
-.camera {
-  right: 40%;
+.cam-buttons {
+  padding-top: 10px;
 }
 
 .image {
@@ -164,38 +166,10 @@ footer.page-footer {
     height: auto;
 }
 
-.camera2 {
-
-  /*width: 1000px;*/
-  /*left: 300px;*/
-
-}
-
-.capture {
-  /*top: 300px;
-  right: 200px;
-  position: absolute;
-  width: 200px;*/
-}
-
-.image_container {
-  width: 200px;
-  height: 120px;
-}
-.image_container img {
-  with: 200%;
-  height: auto;
-}
-
 img.user_image {
-    max-width: 400px;
-}
-
-.user_image {
-  width: 200%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    max-width: 600px;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5%;
 }
 /*Mustache me end*/
