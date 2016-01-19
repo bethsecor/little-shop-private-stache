@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :cart_staches, only: [:create, :destroy]
   resource :cart, only: [:show]
-  resources :staches, only: [:index, :show]
+  resources :staches, only: [:index, :show] do
+    get "stached", to: "staches#stached"
+  end
   resources :categories, only: [:index, :show]
   resources :users, only: [:new, :create, :edit, :update]
   resources :orders, only: [:index, :show, :new, :create]
