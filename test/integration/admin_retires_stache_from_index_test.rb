@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class AdminRetiresStacheFromIndexTest < ActionDispatch::IntegrationTest
   test "admin clicks on retire and the item is updated to retired" do
