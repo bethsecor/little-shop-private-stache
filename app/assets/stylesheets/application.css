@@ -29,7 +29,7 @@ a {
 
 #credentials {
   padding-top: 28px;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   right: 9px;
   font-family: 'Unica One';
@@ -89,6 +89,22 @@ footer.page-footer {
   right: 94.6%;
   color: brown;
 }
+.collection .collection-item.avatar .secondary-content {
+  color: black;
+  top: 5px;
+}
+.remove {
+  position: absolute;
+  bottom: 12px;
+}
+.line{
+  display: block;
+  height: 3px;
+  border: 0;
+  border-top: 4px solid white;
+  margin: .5em 0;
+  padding: 0;
+}
 .login-logout {
   text-decoration: underline;
   font-size: 12px;
@@ -112,8 +128,9 @@ footer.page-footer {
   width: 50px;
 }
 .cart_data {
-  margin-left: 90%;
   width: 200px;
+  position: relative;
+  left: 80%;
 }
 .collection {
   margin-left: auto;
@@ -121,6 +138,10 @@ footer.page-footer {
 }
 .checkout-btn {
   float: right;
+}
+.quantity {
+  text-align: right;
+  padding-right: 12%;
 }
 
 .category-label {

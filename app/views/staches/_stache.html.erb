@@ -6,7 +6,9 @@
           stache_path(stache) %> - Price: <%=number_to_currency(stache.price)%> -
           <%= link_to "Add to Cart", cart_staches_path(stache_id: stache.id), method: :post unless stache.retired? %>
         </span>
-        <img src= <%= stache.image_url %> >
+        <a href="<%= stache_path(stache) %>">
+          <img src= <%= stache.image_url %> >
+        </a>
       </div>
       <p><%= stache.description %></p>
       <br>

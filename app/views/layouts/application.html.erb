@@ -33,10 +33,12 @@
     <div class="left-nav">
       <%= link_to "Categories", categories_path, class:"brown-text fixed" %>
       <%= link_to "Staches", staches_path, class:"brown-text fixed" %>
+      <% unless request.path == cart_path %>
       <div class="cart_box">
         <a id="View Cart" href="/cart"><i class="material-icons shoppingcart black-text">shopping_cart</i></a>
         <a class="cart_total" href="/cart">(<%= @cart.total_quantity %>)</a>
       </div>
+      <% end %>
     </div>
     <div class="logo-box">
       <a href="/"><img class="responsive-img" src=" <%=random_stache%> " id="logo" /></a>
