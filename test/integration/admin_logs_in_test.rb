@@ -9,8 +9,6 @@ class AdminLogsInTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "password"
     click_on "Log In"
 
-    visit admin_dashboard_path
-
     assert_equal admin_dashboard_path, current_path
     assert page.has_content?("Admin StacheBoard")
   end

@@ -7,9 +7,20 @@ h4 {
   font-family: 'Unica One';
   color: darkolivegreen;
 }
+
+h5 {
+  font-family: 'Unica One', cursive;
+  color: darkolivegreen;
+}
+
 a {
   color: forestgreen;
 }
+
+.btn {
+  font-family: 'Unica One';
+}
+
 .preview img {
   max-width: 250px;
   margin: auto;
@@ -19,6 +30,7 @@ a {
 #credentials {
   padding-top: 28px;
   position: absolute;
+  z-index: -1;
   right: 9px;
   font-family: 'Unica One';
 }
@@ -114,8 +126,13 @@ footer.page-footer {
 }
 
 .status {
+  margin: auto;
   width: 80%;
-  padding-left: 200px;
+}
+
+.purchaser {
+  margin: auto;
+  width: 80%;
 }
 /*----INDEX----*/
 .card-title {

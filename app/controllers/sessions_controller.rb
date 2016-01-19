@@ -21,6 +21,8 @@ class SessionsController < ApplicationController
   def login_redirect
     if session[:want_to_checkout]
       redirect_to new_order_path
+    elsif current_admin?
+      redirect_to admin_dashboard_path
     else
       redirect_to dashboard_path
     end

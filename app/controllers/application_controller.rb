@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :random_stache
+  helper_method :current_user, :random_stache, :current_admin?
   protect_from_forgery with: :exception
   before_action :set_cart
   before_action :store_location
