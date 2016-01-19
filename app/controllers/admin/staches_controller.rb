@@ -20,6 +20,12 @@ module Admin
       @staches = Stache.all.includes(:categories)
     end
 
+    def destroy
+      @stache = Stache.find(params[:id]).destroy
+      flash[:notice] = "#{@stache.name} deleted"
+      redirect_to admin_staches_path
+    end
+
     private
 
     def stache_params
