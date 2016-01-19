@@ -35,6 +35,16 @@ module Admin
       end
     end
 
+    def retire
+      Stache.update(params[:stache_id], retired: true)
+      redirect_to admin_staches_path
+    end
+
+    def activate
+      Stache.update(params[:stache_id], retired: false)
+      redirect_to admin_staches_path
+    end
+
     private
 
     def stache_params

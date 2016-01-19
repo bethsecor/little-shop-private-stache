@@ -35,6 +35,10 @@ a {
   font-family: 'Unica One';
 }
 
+.flash {
+  padding-left: 10px;
+}
+
 footer {
    position:inherit;
    bottom: 0;
