@@ -3,12 +3,12 @@
 <head>
   <title>LittleShopPrivateStache</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Montserrat|Kameron|Unica+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -18,6 +18,7 @@
         <%= link_to "Logout", logout_path, method: :delete, class: "right brown-text login-logout" %>
         <%= link_to "Orders", orders_path, class:"right brown-text login-logout" %>
         <%= link_to "Account", dashboard_path, class:"right brown-text login-logout" %>
+        <%= link_to "Stacheboard", admin_dashboard_path, class:"right brown-text login-logout" if current_admin? %>
       <% else %>
         <%= link_to "Login", login_path, id: "Login", class:"right brown-text login-logout" %>
         <% unless request.path == new_user_path || request.path == login_path %>
@@ -32,10 +33,12 @@
     <div class="left-nav">
       <%= link_to "Categories", categories_path, class:"brown-text fixed" %>
       <%= link_to "Staches", staches_path, class:"brown-text fixed" %>
+      <% unless request.path == cart_path %>
       <div class="cart_box">
         <a id="View Cart" href="/cart"><i class="material-icons shoppingcart black-text">shopping_cart</i></a>
         <a class="cart_total" href="/cart">(<%= @cart.total_quantity %>)</a>
       </div>
+      <% end %>
     </div>
     <div class="logo-box">
       <a href="/"><img class="responsive-img" src=" <%=random_stache%> " id="logo" /></a>
@@ -43,7 +46,7 @@
   </div>
 
 <% flash.each do |type, msg| %>
-  <%= content_tag :div, sanitize(msg), class: "flash_#{type}" %>
+  <%= content_tag :div, sanitize(msg), class: "flash_#{type} flash" %>
 <% end %>
 
 <%= yield %>
@@ -66,7 +69,6 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </body>
 </html>

@@ -6,9 +6,9 @@ class AdminCreatesCategoryTest < ActionDispatch::IntegrationTest
     ApplicationController.any_instance.stubs(:current_user).returns(admin)
 
     visit admin_dashboard_path
-    click_on "Add New Category"
+    click_on "View All Categories"
 
-    assert_equal new_admin_category_path, current_path
+    assert_equal admin_categories_path, current_path
 
     fill_in "Title", with: "Dictator"
     click_on "Create Category"

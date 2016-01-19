@@ -1,17 +1,35 @@
 module Admin
   class CategoriesController < Admin::BaseController
-    def new
-      @category = Category.new
+    def index
+      @categories = Category.all
+      if params[:category_id]
+        @category = Category.find(params[:category_id])
+        @title = "Editing #{@category.title}"
+      else
+        @title = "Create New Category"
+        @category = Category.new
+      end
     end
 
     def create
       @category = Category.new(category_params)
       if @category.save
         flash[:notice] = "New category #{@category.title} created"
-        redirect_to admin_dashboard_path
-      else
-        render :new
       end
+      redirect_to admin_categories_path
+    end
+
+    def edit
+      @category = Category.find(params[:id])
+      redirect_to admin_categories_path(category_id: @category.id)
+    end
+
+    def update
+      @category = Category.find(params[:id])
+      if @category.update(category_params)
+        flash[:notice] = "#{@category.title} updated"
+      end
+      redirect_to admin_categories_path
     end
 
     private
