@@ -6,8 +6,9 @@ module Admin
 
     def create
       categories = params[:stache][:categories]
+      retired_status = params[:stache][:retired]
       @stache = Stache.new(stache_params)
-      @stache_creation = StacheCreation.new(@stache, categories)
+      @stache_creation = StacheCreation.new(@stache, categories, retired_status)
       if @stache_creation.create
         flash[:notice] = "#{@stache.name} created!"
         redirect_to @stache
@@ -20,11 +21,25 @@ module Admin
       @staches = Stache.all.includes(:categories)
     end
 
+    def edit
+      @stache = Stache.find(params[:id])
+    end
+
+    def update
+      @stache = Stache.find(params[:id])
+      if @stache.update(stache_params)
+        flash[:notice] = "#{@stache.name} updated"
+        redirect_to admin_staches_path
+      else
+        render "edit"
+      end
+    end
+
     private
 
     def stache_params
       params.require(:stache).permit(:name, :description, :price, :image_url,
-                                     :categories)
+                                     :categories, :retired)
     end
   end
 end
