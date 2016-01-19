@@ -80,7 +80,6 @@ footer.page-footer {
   left: 29px;
   margin-top: 19px;
   position: absolute;
-
 }
 .cart_total {
   left: 9px;
@@ -123,14 +122,23 @@ footer.page-footer {
   color: green;
 }
 /*----CART----*/
+.title {
+  margin-left: -20px;
+}
 .stache_in_cart {
   display: block;
   width: 50px;
 }
 .cart_data {
-  width: 200px;
-  position: relative;
-  left: 80%;
+  width: 100px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+.collection .collection-item.avatar {
+  min-height: 200px;
+    padding-left: 72px;
+    position: relative;
 }
 .collection {
   margin-left: auto;
@@ -143,7 +151,21 @@ footer.page-footer {
   text-align: right;
   padding-right: 12%;
 }
-
+.description {
+  margin-right: 30%;
+  margin-left: 80px;
+}
+.delete {
+  position: absolute;
+  bottom: 5%;
+  right: 20%;
+}
+.collection .collection-item.avatar .circle  {
+  width: 130px;
+  height: 140px;
+  position: absolute;
+  bottom: 30px;
+}
 .category-label {
   font-family: 'Unica One', cursive;
   font-size: 2em;
