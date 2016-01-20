@@ -10,7 +10,7 @@ class RemoveStacheFromCartTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?(stache.name)
 
-    click_on "Remove"
+    click_on "delete"
     within(".cart") do
       refute page.has_content?(stache.name)
     end

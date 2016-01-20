@@ -1,7 +1,7 @@
 body {
   background-image: url("brick-wall.png");
   /*background-image: url("subtle_white_feathers.png");*/
-  background-color: floralwhite;
+  background-color: white;
   height: 100%;
 }
 h4 {
@@ -9,8 +9,11 @@ h4 {
   color: darkolivegreen;
 }
 h5 {
-  font-family: 'Unica One', cursive;
+  font-family: 'Unica One';
   color: darkolivegreen;
+}
+p {
+  font-family: 'Unica One';
 }
 li {
   font-family: 'Unica One';
@@ -41,22 +44,7 @@ a {
 .flash {
   padding-left: 10px;
 }
-.footer {
-  background-color: rgba(90, 0, 0, 0.2);
-  width: 100%;
-  height: 40px;
-  position: relative;
-  clear:both;
-  margin-top: 120px;
-}
-.footer-content {
-  float: right;
-  display: inline-block;
-}
-.footer-link {
-  position: relative;
-  top: 10px;
-}
+
 /*----NAVIGATION----*/
 
 .left-nav {
@@ -203,4 +191,25 @@ a {
   position: absolute;
   top: 50%;
   left: 20%;
+}
+/*----FOOTER----*/
+.footer-bar {
+  background-color: sienna;
+  opacity: .9;
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  clear:both;
+  margin-top: 120px;
+  bottom: 0;
+  z-index: 0;
+}
+.footer-content {
+  float: right;
+  display: inline-block;
+}
+.footer-link {
+  position: relative;
+  top: 10px;
+  left: 12px;
 }
