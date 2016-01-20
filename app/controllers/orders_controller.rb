@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
       session[:cart] = {}
       redirect_to order_path(@order)
     else
-      redirect_to new_order_path
+      render :new
     end
   end
 

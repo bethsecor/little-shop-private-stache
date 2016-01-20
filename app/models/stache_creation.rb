@@ -11,7 +11,7 @@ class StacheCreation
     if status == 1
       @stache.retired = true
     end
-    @stache.categories << Category.find(categories)
+    @stache.categories << Category.find(categories) unless categories.nil?
     stache.save
   end
 end
