@@ -11,7 +11,8 @@
     <div class="cart_data">
       <div class="stache_in_cart">
         <%= f.label :quantity %>:
-        <%= f.number_field :quantity, value: @cart.contents[stache.id.to_s] %>
+        <%= f.number_field :quantity, value: @cart.contents[stache.id.to_s],
+                                      min: 1 %>
       </div>
         <%= f.hidden_field :stache_id, value: stache.id %>
         <%= f.submit "Update", class: "btn brown" %>

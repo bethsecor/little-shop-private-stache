@@ -7,15 +7,15 @@ class OrderTest < ActiveSupport::TestCase
   should validate_presence_of(:city)
   should validate_presence_of(:state)
   should validate_presence_of(:zipcode)
-  should validate_inclusion_of(:status). in_array(['ordered', 'paid',
-                                                    'completed','cancelled'])
+  should validate_inclusion_of(:status).in_array(%w(ordered pair
+                                                    completed cancelled))
 
   test "zipcode is five digits" do
     order_1 = build(:order)
     assert order_1.valid?
     order_2 = build(:order, zipcode: 2)
     refute order_2.valid?
-    order_3 = build(:order, zipcode: 202020202)
+    order_3 = build(:order, zipcode: 202_020_202)
     refute order_3.valid?
   end
 

@@ -11,7 +11,7 @@ class Order < ActiveRecord::Base
   validates :state, presence: true
   validates :zipcode, presence: true
   validates_inclusion_of :status,
-    in: ['ordered', 'paid', 'completed','cancelled']
+    in: %w(ordered pair completed cancelled)
 
   def total
     staches.map { |stache| subtotal(stache) }.sum
