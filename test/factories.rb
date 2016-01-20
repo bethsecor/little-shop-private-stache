@@ -46,7 +46,7 @@ FactoryGirl.define do
     title
   end
 
-  sequence :title, %w(A B C D).cycle do |n|
+  sequence :title, %w(A B C D E F G H).cycle do |n|
     "#{n} category"
   end
 
