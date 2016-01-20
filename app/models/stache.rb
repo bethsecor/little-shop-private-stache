@@ -19,7 +19,7 @@ class Stache < ActiveRecord::Base
   end
 
   def truncated_description
-    description[0..230] + "..."
+    description[0..200] + "..."
   end
 
   private

@@ -181,6 +181,10 @@ a {
   display: inherit;
   font-family: 'Unica One';
 }
+
+.stache-desc {
+  height: 100px;
+}
 /*----SHOW----*/
 .stache-me-box{
   position: relative;

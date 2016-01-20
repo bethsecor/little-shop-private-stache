@@ -28,7 +28,7 @@ class UserViewsPastOrderTest < ActionDispatch::IntegrationTest
 
     user.orders << order
 
-    order_2 = Order.new
+    order_2 = create(:order)
 
     order_stache_4 = OrderStache.create(order_id: order_2.id,
                                         stache_id: stache_3.id,
