@@ -21,4 +21,10 @@ class StacheTest < ActiveSupport::TestCase
     assert_equal "Retired", stache1.status
     assert_equal "Active", stache2.status
   end
+
+  test "it truncates the stache description on the index pages" do
+    stache1 = create(:stache, retired: false, description: "a" * 300)
+
+    assert_equal 234, stache1.truncated_description.length
+  end
 end
