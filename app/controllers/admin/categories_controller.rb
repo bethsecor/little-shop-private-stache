@@ -7,10 +7,13 @@ module Admin
 
     def create
       @category = Category.new(category_params)
+      @categories = Category.all
       if @category.save
         flash[:notice] = "New category #{@category.title} created"
+        redirect_to admin_categories_path
+      else
+        render "index"
       end
-      redirect_to admin_categories_path
     end
 
     def edit
