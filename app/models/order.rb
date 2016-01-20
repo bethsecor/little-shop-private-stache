@@ -4,13 +4,12 @@ class Order < ActiveRecord::Base
   has_many :staches, through: :order_staches
   before_create :set_ordered_status
 
-  validates :zipcode, length: { is: 5 }
+  validates :zipcode, presence: true, length: { is: 5 }, numericality: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :address, presence: true
   validates :city, presence: true
   validates :state, presence: true
-  validates :zipcode, presence: true
   validates_inclusion_of :status,
                          in: %w(ordered paid completed cancelled)
 

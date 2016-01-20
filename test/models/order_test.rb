@@ -7,11 +7,14 @@ class OrderTest < ActiveSupport::TestCase
   should validate_presence_of(:city)
   should validate_presence_of(:state)
   should validate_presence_of(:zipcode)
+  should validate_numericality_of(:zipcode)
   should validate_inclusion_of(:status).in_array(%w(ordered paid
                                                     cancelled completed))
 
   test "before create set ordered status" do
-    order_1 = create(:order)
+    order_1 = Order.create(first_name: "Beth", last_name: "Secor",
+                           address: "1510 Blake St.", city: "Denver",
+                           state: "CO", zipcode: "80202")
     assert order_1.status == "ordered"
   end
 
