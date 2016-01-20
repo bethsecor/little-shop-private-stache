@@ -70,11 +70,11 @@ FactoryGirl.define do
     "Z#{n}"
   end
 
-  sequence :zipcode, (1..4).to_a.to_a.cycle do |n|
+  sequence :zipcode, (1..4).to_a.cycle do |n|
     "8011#{n}"
   end
 
-  sequence :status, %w(ordered paid cancelled completed).to_a.to_a.cycle do |n|
+  sequence :status, %w(ordered paid cancelled completed).to_a.cycle do |n|
     "#{n}"
   end
 end
