@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/dashboard", to: "dashboard#show"
+    resources :categories, only: [:index, :create, :edit, :update, :destroy]
     resources :staches, only: [:new, :create, :index, :edit, :destroy, :update]
     resources :orders, only: [:show]
     put "cancel_order", to: "orders#cancel"

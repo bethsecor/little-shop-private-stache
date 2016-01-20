@@ -2,6 +2,7 @@
   <h4>Admin StacheBoard</h4>
   <%= link_to "Create New Stache", new_admin_stache_path, class: "btn light-green darken-4" %>
   <%= link_to "View All Staches", admin_staches_path, class: "btn light-green darken-4" %>
+  <%= link_to "View All Categories", admin_categories_path, class: "btn light-green darken-4" %>
   <div class="container">
     <h5 class="center">Order Statuses</h5>
     <%= bar_chart Order.order_status_count, discrete: true,
