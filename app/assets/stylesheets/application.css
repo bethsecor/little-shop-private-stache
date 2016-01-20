@@ -1,20 +1,26 @@
 body {
-  background-image: url("subtle_white_feathers.png");
+  background-image: url("brick-wall.png");
+  /*background-image: url("subtle_white_feathers.png");*/
   background-color: white;
-  min-height: 100vh;
+  height: 100%;
 }
 h4 {
   font-family: 'Unica One';
   color: darkolivegreen;
 }
-
 h5 {
-  font-family: 'Unica One', cursive;
+  font-family: 'Unica One';
   color: darkolivegreen;
 }
-
+p {
+  font-family: 'Unica One';
+}
+li {
+  font-family: 'Unica One';
+}
 a {
   color: forestgreen;
+  font-family: 'Unica One';
 }
 
 .btn {
@@ -39,18 +45,6 @@ a {
   padding-left: 10px;
 }
 
-footer {
-   position:inherit;
-   bottom: 0;
-   width: 100%;
-   height: 150px;
-}
-footer.page-footer {
-  background-color: #5d4037;
-  margin-top: 90px;
-  position: inherit;
-  max-height: 120px;
-}
 /*----NAVIGATION----*/
 
 .left-nav {
@@ -80,7 +74,6 @@ footer.page-footer {
   left: 29px;
   margin-top: 19px;
   position: absolute;
-
 }
 .cart_total {
   left: 9px;
@@ -88,6 +81,7 @@ footer.page-footer {
   position: absolute;
   right: 94.6%;
   color: brown;
+  font-family: 'Unica One';
 }
 .collection .collection-item.avatar .secondary-content {
   color: black;
@@ -123,14 +117,23 @@ footer.page-footer {
   color: green;
 }
 /*----CART----*/
+.title {
+  margin-left: -20px;
+}
 .stache_in_cart {
   display: block;
   width: 50px;
 }
 .cart_data {
-  width: 200px;
-  position: relative;
-  left: 80%;
+  width: 100px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+.collection .collection-item.avatar {
+  min-height: 200px;
+    padding-left: 72px;
+    position: relative;
 }
 .collection {
   margin-left: auto;
@@ -143,7 +146,21 @@ footer.page-footer {
   text-align: right;
   padding-right: 12%;
 }
-
+.description {
+  margin-right: 30%;
+  margin-left: 80px;
+}
+.delete {
+  position: absolute;
+  bottom: 5%;
+  right: 20%;
+}
+.collection .collection-item.avatar .circle  {
+  width: 130px;
+  height: 140px;
+  position: absolute;
+  bottom: 30px;
+}
 .category-label {
   font-family: 'Unica One', cursive;
   font-size: 2em;
@@ -187,6 +204,7 @@ footer.page-footer {
   left: 41%;
 }
 
+
 .cam-buttons {
   padding-top: 10px;
 }
@@ -207,3 +225,24 @@ img.user_image {
     border-radius: 5%;
 }
 /*Mustache me end*/
+
+.footer-bar {
+  background-color: sienna;
+  opacity: .9;
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  clear:both;
+  margin-top: 120px;
+  bottom: 0;
+  z-index: 0;
+}
+.footer-content {
+  float: right;
+  display: inline-block;
+}
+.footer-link {
+  position: relative;
+  top: 10px;
+  left: 12px;
+}
