@@ -28,7 +28,7 @@ with elegance.
 Pairings: rich heavy sauces, red meat, seasoned game, strong cheeses
 Oak: Heavy  Body: Heavy   Aging: 9 - 12 months  Sweetness: Dry"
 
-description_3 = "developed to give a high yield vine in hot climate conditions.
+description_3 = "Developed to give a high yield vine in hot climate conditions.
 The 'must' can be used to increase color intensities in blends or it can be
 used to produce a light table stache.
 Pairing: The mellow taste pairs well with pork and chicken.
@@ -222,38 +222,38 @@ stache_12.save
 
 # Category 4 Staches
 stache_13 = Stache.new(name: "Fabulous", description: description_13,
-                     price: 4.0,
-                     image_url: "http://i.imgur.com/oRpl6IL.png",
-                     stache_url: "http://i.imgur.com/SKWzHIb.png")
+                       price: 4.0,
+                       image_url: "http://i.imgur.com/oRpl6IL.png",
+                       stache_url: "http://i.imgur.com/SKWzHIb.png")
 stache_13.categories << cat_4
 stache_13.save
 stache_14 = Stache.new(name: "Diva", description: description_14, price: 4.0,
-                     image_url: "http://i.imgur.com/eV1i2oy.png",
-                     stache_url: "http://i.imgur.com/f0EAa6p.png")
+                       image_url: "http://i.imgur.com/eV1i2oy.png",
+                       stache_url: "http://i.imgur.com/f0EAa6p.png")
 stache_14.categories << cat_4
 stache_14.save
 stache_15 = Stache.new(name: "Kitten", description: description_15, price: 4.0,
-                     image_url: "http://i.imgur.com/LM4paeF.png",
-                     stache_url: "http://i.imgur.com/cx1omcB.png")
+                       image_url: "http://i.imgur.com/LM4paeF.png",
+                       stache_url: "http://i.imgur.com/cx1omcB.png")
 stache_15.categories << cat_4
 stache_15.save
 stache_16 = Stache.new(name: "Yay!", description: description_16, price: 4.0,
-                     image_url: "http://i.imgur.com/XtsVPx6.png",
-                     stache_url: "http://i.imgur.com/UfIug97.png")
+                       image_url: "http://i.imgur.com/XtsVPx6.png",
+                       stache_url: "http://i.imgur.com/UfIug97.png")
 stache_16.categories << cat_4
 stache_16.save
 
 user_1 = User.create(username: "beth", password: "123")
 stache_17 = Stache.create(name: "Mustachio",
-                         description: description_17,
-                         price: 50.00,
-                         retired: true,
-                         image_url: pic)
+                          description: description_17,
+                          price: 50.00,
+                          retired: true,
+                          image_url: pic)
 stache_18 = Stache.create(name: "The Lenny",
-                         description: description_18,
-                         price: 5000.00,
-                         retired: true,
-                         image_url: pic)
+                          description: description_18,
+                          price: 5000.00,
+                          retired: true,
+                          image_url: pic)
 order_1 = Order.new(first_name: "Leslie", last_name: "Knope",
                     address: "1510 Blake St.", city: "Denver",
                     state: "CO", zipcode: "80202")
