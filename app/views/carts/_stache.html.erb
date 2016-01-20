@@ -1,7 +1,7 @@
 <li class="collection-item avatar light-green lighten-5 brown-text">
   <img src= <%= stache.image_url %> alt="" class="circle">
-  <span class="title"><%= stache.name %></span>
-  <div class="">
+  <span class="title black-text"><%= stache.name %></span>
+  <div class="description">
     <p><%= stache.description %></p>
   </div>
   <p class="secondary-content right-align">Stache Price:
@@ -18,9 +18,9 @@
         <%= f.submit "Update", class: "btn brown" %>
     </div>
     <% end %>
-  <i class="material-icons brown-text">delete</i>
-  <%= link_to "Remove", cart_stache_path(stache.id), method: :delete,
-      class: "btn remove brown" %>
+  <a class="delete" data-method='delete' href="/cart_staches/<%= stache.id %>">
+    <i class="material-icons red-text">delete</i>
+  </a>
   </p>
 </li>
 <div class="line"></div>
