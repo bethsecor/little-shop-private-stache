@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="center">
+    <h4>You are the Stache Category Master</h4>
+  </div>
+<table>
+  <thead>
+    <tr>
+      <th data-field="title">Title</th>
+      <th data-field="quantity">Number o' Staches</th>
+      <th data-field="actions">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+    <div id="category-<%= category.id %>">
+      <tr>
+        <td><%= link_to category.title, category, class: "btn light-green darken-4" %></td>
+        <td><%= category.staches.count %></td>
+
+        <td>
+          <%= link_to "Edit", edit_admin_category_path(category) %>
+          <% if category.staches.empty? %>
+          /
+            <%= link_to "Remove", admin_category_path(category), method: :delete %>
+          <% end %>
+        </td>
+      </tr>
+    </div>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<div class="container">
+  <br>
+  <div class="center">
+    <h4><%= @title %></h4>
+  </div>
+  <div class="container center">
+    <%= form_for [:admin, @category] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= f.text_field :title %>
+      <%= f.label :title %>
+      <br>
+      <br>
+      <%= f.submit "Stache that Category!", class: "btn light-green darken-4" %>
+    <% end %>
+  </div>
+</div>
