@@ -18,6 +18,10 @@ class Stache < ActiveRecord::Base
     end
   end
 
+  def truncated_description
+    description[0..230] + "..."
+  end
+
   private
 
   def default_image
