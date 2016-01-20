@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :order_staches
   has_many :staches, through: :order_staches
+  before_create :set_ordered_status
 
   validates :zipcode, length: { is: 5 }
   validates :first_name, presence: true
@@ -11,7 +12,11 @@ class Order < ActiveRecord::Base
   validates :state, presence: true
   validates :zipcode, presence: true
   validates_inclusion_of :status,
-    in: %w(ordered pair completed cancelled)
+                         in: %w(ordered paid completed cancelled)
+
+  def set_ordered_status
+    self.status ||= "ordered"
+  end
 
   def total
     staches.map { |stache| subtotal(stache) }.sum
