@@ -3,6 +3,16 @@ class Order < ActiveRecord::Base
   has_many :order_staches
   has_many :staches, through: :order_staches
 
+  validates :zipcode, length: { is: 5 }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :zipcode, presence: true
+  validates_inclusion_of :status,
+    in: ['ordered', 'paid', 'completed','cancelled']
+
   def total
     staches.map { |stache| subtotal(stache) }.sum
   end

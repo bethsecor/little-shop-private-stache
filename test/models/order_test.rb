@@ -1,6 +1,25 @@
 require "test_helper"
 
 class OrderTest < ActiveSupport::TestCase
+  should validate_presence_of(:first_name)
+  should validate_presence_of(:last_name)
+  should validate_presence_of(:address)
+  should validate_presence_of(:city)
+  should validate_presence_of(:state)
+  should validate_presence_of(:zipcode)
+  should validate_inclusion_of(:status). in_array(['ordered', 'paid',
+                                                    'completed','cancelled'])
+
+
+  test "zipcode is five digits" do
+    order_1 = build(:order)
+    assert order_1.valid?
+    order_2 = build(:order, zipcode: 2)
+    refute order_2.valid?
+    order_3 = build(:order, zipcode: 202020202)
+    refute order_3.valid?
+  end
+
   test "formats a created date" do
     date = DateTime.new(2002, 10, 31, 2, 2, 2, "+02:00")
     order = Order.create(created_at: date)
@@ -16,17 +35,20 @@ class OrderTest < ActiveSupport::TestCase
   end
 
   test "order completed" do
-    order = Order.new(status: "completed")
+    # order = Order.new(status: "completed")
+    order = create(:order, status: "completed")
     assert_equal "Yes", order.completed?
   end
 
   test "order completed through cancellation" do
-    order = Order.new(status: "cancelled")
+    # order = Order.new(status: "cancelled")
+    order = create(:order, status: "cancelled")
     assert_equal "Yes", order.completed?
   end
 
   test "order total" do
-    order = Order.create
+    order = create(:order)
+    # order = Order.create
     # byebug
     stache_1 = create(:stache, price: 5.0)
     stache_2 = create(:stache, price: 3.0)
@@ -48,7 +70,8 @@ class OrderTest < ActiveSupport::TestCase
   end
 
   test "create order staches" do
-    order = Order.create
+    # order = Order.create
+    order = create(:order)
     stache_1, stache_2, stache_3 = create_list(:stache, 3)
     cart = { stache_1.id.to_s => 3,
              stache_2.id.to_s => 5,
@@ -58,10 +81,14 @@ class OrderTest < ActiveSupport::TestCase
   end
 
   test "order status count" do
-    Order.create(status: "ordered")
-    Order.create(status: "paid")
-    Order.create(status: "paid")
-    Order.create(status: "completed")
+    create(:order, status: "ordered")
+    create(:order, status: "paid")
+    create(:order, status: "paid")
+    create(:order, status: "completed")
+    # Order.create(status: "ordered")
+    # Order.create(status: "paid")
+    # Order.create(status: "paid")
+    # Order.create(status: "completed")
 
     expected = [["Ordered", 1], ["Paid", 2], ["Completed", 1], ["Cancelled", 0]]
     assert_equal expected, Order.order_status_count
