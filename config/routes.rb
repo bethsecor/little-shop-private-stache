@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/dashboard", to: "users#show"
   post "update_quantity", to: "cart_staches#update_quantity"
+  get '/about', to: "static#about"
 
   root "categories#index"
 end
