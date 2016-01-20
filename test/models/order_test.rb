@@ -10,7 +10,6 @@ class OrderTest < ActiveSupport::TestCase
   should validate_inclusion_of(:status). in_array(['ordered', 'paid',
                                                     'completed','cancelled'])
 
-
   test "zipcode is five digits" do
     order_1 = build(:order)
     assert order_1.valid?

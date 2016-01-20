@@ -1,6 +1,10 @@
 <div class="container">
+
   <%= form_for @order do |f| %>
-  <%= f.text_field :first_name %>
+
+    <%= render "shared/error_messages", object: f.object %>
+
+    <%= f.text_field :first_name %>
     <%= f.label :first_name, "First Name" %>
 
     <%= f.text_field :last_name %>
