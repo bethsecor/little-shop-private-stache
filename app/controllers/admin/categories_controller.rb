@@ -2,13 +2,7 @@ module Admin
   class CategoriesController < Admin::BaseController
     def index
       @categories = Category.all
-      if params[:category_id]
-        @category = Category.find(params[:category_id])
-        @title = "Editing #{@category.title}"
-      else
-        @title = "Create New Category"
-        @category = Category.new
-      end
+      @category = Category.new
     end
 
     def create
@@ -20,16 +14,18 @@ module Admin
     end
 
     def edit
+      @categories = Category.all
       @category = Category.find(params[:id])
-      redirect_to admin_categories_path(category_id: @category.id)
     end
 
     def update
       @category = Category.find(params[:id])
       if @category.update(category_params)
         flash[:notice] = "#{@category.title} updated"
+        redirect_to admin_categories_path
+      else
+        render "edit"
       end
-      redirect_to admin_categories_path
     end
 
     def destroy
