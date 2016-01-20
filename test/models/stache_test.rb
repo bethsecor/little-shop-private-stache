@@ -25,6 +25,6 @@ class StacheTest < ActiveSupport::TestCase
   test "it truncates the stache description on the index pages" do
     stache1 = create(:stache, retired: false, description: "a" * 300)
 
-    assert_equal 234, stache1.truncated_description.length
+    assert_equal 204, stache1.truncated_description.length
   end
 end
