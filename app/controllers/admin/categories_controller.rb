@@ -32,6 +32,12 @@ module Admin
       redirect_to admin_categories_path
     end
 
+    def destroy
+      @category = Category.find(params[:id]).destroy
+      flash[:notice] = "#{@category.title} removed"
+      redirect_to admin_categories_path
+    end
+
     private
 
     def category_params
