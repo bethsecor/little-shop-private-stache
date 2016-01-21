@@ -4,7 +4,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @staches = @category.staches
+    @category = Category.includes(:staches).find(params[:id])
   end
 end

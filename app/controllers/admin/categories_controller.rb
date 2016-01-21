@@ -18,11 +18,9 @@ module Admin
     end
 
     def edit
-      # @category = Category.find(params[:id])
     end
 
     def update
-      # @category = Category.find(params[:id])
       if @category.update(category_params)
         flash[:notice] = "#{@category.title} updated"
         redirect_to admin_categories_path
