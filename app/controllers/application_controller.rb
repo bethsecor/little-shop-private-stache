@@ -34,6 +34,10 @@ class ApplicationController < ActionController::Base
     current_user && current_user.admin?
   end
 
+  # def headshot_post_save(filepath)
+  #   byebug
+  # end
+
   def random_stache
     num = rand(1..4)
     "/assets/logos/#{num}.png"
