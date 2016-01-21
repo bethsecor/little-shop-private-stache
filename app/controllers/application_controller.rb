@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_cart
   before_action :store_location
-  before_action :set_thread
 
   def store_location
     session[:forwarding_url] = request.path if request.get?
@@ -18,10 +17,6 @@ class ApplicationController < ActionController::Base
     @cart = Cart.new(session[:cart])
   end
 
-  def set_thread
-    User.current_user = User.find(session[:user_id]) if session[:user_id]
-  end
-
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -34,9 +29,11 @@ class ApplicationController < ActionController::Base
     current_user && current_user.admin?
   end
 
-  # def headshot_post_save(filepath)
-  #   byebug
-  # end
+  def headshot_post_save(filepath)
+    image_path = filepath.split("public")[1]
+    @headshot = HeadshotPhoto.create(image_file_name: filepath.split("public")[1])
+    current_user.headshot_photos << @headshot
+  end
 
   def random_stache
     num = rand(1..4)

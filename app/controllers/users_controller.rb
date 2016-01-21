@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      User.current_user = User.find(session[:user_id])
       redirect_to dashboard_path
     else
       render :new
