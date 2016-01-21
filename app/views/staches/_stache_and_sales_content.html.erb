@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card white darken-1">
+      <div class="card-content brown-text">
+        <span class="card-title"><%= @stache.name %></span>
+        <p><%= @stache.description %></p>
+        <% unless @stache.categories.empty? %>
+        Categories:
+           <% @stache.categories.each do |category| %>
+             <%= link_to category.title, category %>
+           <% end %>
+        <% end %>
+      </div>
+      <div class="card-action">
+        <p><%= number_to_currency(@stache.price) %></p>
+        <%= link_to("Add to Cart", cart_staches_path(stache_id: @stache.id),
+        method: :post) unless @stache.retired? %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6">
+    <div class="preview">
+      <div class="card-image">
+        <img src="<%= @stache.image_url %>">
+      </div>
+    </div>
+  </div>
+</div>

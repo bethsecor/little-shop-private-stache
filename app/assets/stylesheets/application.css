@@ -189,14 +189,47 @@ a {
 .stache-me-box{
   position: relative;
 }
+
+
+/*Mustache Me*/
 .stache-me {
   z-index: 10;
   width: 60%;
   position: absolute;
-  top: 50%;
-  left: 20%;
+  top: 46%;
+  left: 41%;
 }
-/*----FOOTER----*/
+
+.stache-pic {
+  z-index: 10;
+  width: 60%;
+  position: absolute;
+  top: 47%;
+  left: 41%;
+}
+
+
+.cam-buttons {
+  padding-top: 10px;
+}
+
+.image {
+  max-width: 250px;
+  top: 450px;
+  /*left: 43%;*/
+  position: absolute;
+    height: auto;
+}
+
+img.user_image {
+  top: 10%;
+    max-width: 700px;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5%;
+}
+/*Mustache me end*/
+
 .footer-bar {
   background-color: sienna;
   opacity: .9;

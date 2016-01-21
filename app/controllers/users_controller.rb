@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  helper :headshot
   before_action :current_user_guard, only: [:edit]
 
   def new

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post "headshot/capture" => 'headshot#capture', :as => :headshot_capture
+
   namespace :admin do
     get "/dashboard", to: "dashboard#show"
     resources :categories, only: [:index, :create, :edit, :update, :destroy]
@@ -11,9 +13,12 @@ Rails.application.routes.draw do
     put "activate_stache", to: "staches#activate"
   end
 
+  resources :staches, only: [:index, :show] do
+    get "stached", to: "staches#stached"
+  end
+
   resources :cart_staches, only: [:create, :destroy]
   resource :cart, only: [:show]
-  resources :staches, only: [:index, :show]
   resources :categories, only: [:index, :show]
   resources :users, only: [:new, :create, :edit, :update]
   resources :orders, only: [:index, :show, :new, :create]
