@@ -14,21 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready(function(){
-	// alerting the text within the div with the id alert-text
-
-	// animating an element
-	$("#animate").click(function(){
-		$("#animate-target").animate({
-		    opacity: 0.05,
-		    left: "+=900",
-		  }, 3000);
-	});
-
-  $("#animate").click(function(){
-    $("#animate-target2").animate({
-        opacity: 0.05,
-        left: "-=900",
-      }, 3000);
-  });
-});
