@@ -19,7 +19,7 @@ class StachesController < ApplicationController
 
   def stached_guard
     @stache = Stache.find(params[:stache_id])
-    unless current_user && !current_user.headshot_photos.empty? && session[:cam_stache_id] == @stache.id
+    unless current_user && session[:cam_stache_id] == @stache.id
       redirect_to @stache
     end
   end
