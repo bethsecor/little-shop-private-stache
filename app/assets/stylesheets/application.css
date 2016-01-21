@@ -250,3 +250,41 @@ img.user_image {
   top: 10px;
   left: 12px;
 }
+/*----ABOUT----*/
+.portrait {
+  height: 80px;
+  z-index: 888;
+}
+.curtain {
+  width: 180%;
+  z-index: 888;
+  position: absolute;
+}
+.curtain2 {
+  width: 180%;
+  z-index: 888;
+  top: 100px;
+  position: absolute;
+}
+#animate-target {
+	width: 50%;
+	margin: 20px;
+	position: relative;
+}
+#animate-target2 {
+	width: 50%;
+	margin: 20px;
+	position: relative;
+}
+#animate {
+  position: absolute;
+  top: 80px;
+  left: 13%;
+}
+.background {
+  position: absolute;
+  display: block;
+  margin: auto;
+  width: 100%;
+  z-index: 0;
+}

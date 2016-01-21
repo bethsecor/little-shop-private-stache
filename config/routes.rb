@@ -13,11 +13,12 @@ Rails.application.routes.draw do
     put "activate_stache", to: "staches#activate"
   end
 
-  resources :cart_staches, only: [:create, :destroy]
-  resource :cart, only: [:show]
   resources :staches, only: [:index, :show] do
     get "stached", to: "staches#stached"
   end
+
+  resources :cart_staches, only: [:create, :destroy]
+  resource :cart, only: [:show]
   resources :categories, only: [:index, :show]
   resources :users, only: [:new, :create, :edit, :update]
   resources :orders, only: [:index, :show, :new, :create]
@@ -27,5 +28,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/dashboard", to: "users#show"
   post "update_quantity", to: "cart_staches#update_quantity"
+  get "/about", to: "static#about"
+
   root "categories#index"
 end
