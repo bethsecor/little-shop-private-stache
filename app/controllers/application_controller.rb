@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_thread
-    User.current_user = session[:user_id]
+    User.current_user = User.find(session[:user_id]) if session[:user_id]
   end
 
   # def headshot_post_save(filepath)

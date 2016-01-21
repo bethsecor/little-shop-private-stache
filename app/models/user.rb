@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
   has_secure_password
 
   def self.current_user
-    Thread.current[:user_id]
+    Thread.current[:current_user]
   end
 
-  def self.current_user=(user_id)
-    Thread.current[:user_id] = user_id
+  def self.current_user=(usr)
+    Thread.current[:current_user] = usr
   end
 end
