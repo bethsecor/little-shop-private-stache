@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ViewFooterLinksTest < ActionDispatch::IntegrationTest
   test "user can use footer links to view root and about" do

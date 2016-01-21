@@ -23,23 +23,12 @@ $(document).ready(function(){
 		    opacity: 0.05,
 		    left: "+=900",
 		  }, 3000);
-	})
+	});
 
   $("#animate").click(function(){
     $("#animate-target2").animate({
         opacity: 0.05,
         left: "-=900",
       }, 3000);
-  })
-
-	//animate height of an element
-	$( "#grow" ).click(function() {
-	  $( "#grow-target" ).animate({
-	    width: "70%",
-	    opacity: 0.4,
-	    marginLeft: "0.6in",
-	    fontSize: "3em",
-	    borderWidth: "10px"
-	  }, 1000 );
-	});
+  });
 });
