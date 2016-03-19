@@ -13,7 +13,7 @@ This Rails application is an e-commerce store selling mustaches. It uses a sessi
 
 ### Live Version
 
-You can find a live version of this application on Heroku at: [https://pure-bayou-1075.herokuapp.com/](https://pure-bayou-1075.herokuapp.com/)
+You can find a live version of this application on Heroku at: [http://private-stache.herokuapp.com/](http://private-stache.herokuapp.com/)
 
 ### Setup
 
